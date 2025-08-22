@@ -1,0 +1,11 @@
+appId: com.agentic.schedule
+productName: Agentic Schedule
+directories:
+  output: dist
+  buildResources: electron/assets
+files:
+  - from: .
+    filter:
+      - package.json
+      - electron/**/*
+      - frontend/dist/**/*
