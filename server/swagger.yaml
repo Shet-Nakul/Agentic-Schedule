@@ -1,0 +1,259 @@
+openapi: 3.0.0
+info:
+  title: Agentic Schedule API
+  version: 1.0.0
+  description: API documentation for Contracts, Staff, Skills, DayOffRequests, and ShiftOffRequests
+
+servers:
+  - url: /
+
+paths:
+  /contracts:
+    post:
+      summary: Create a new contract
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contract'
+      responses:
+        '200':
+          description: Contract created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  ContractID:
+                    type: integer
+    get:
+      summary: Get all contracts
+      responses:
+        '200':
+          description: List of contracts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contract'
+
+  /staff:
+    post:
+      summary: Create a new staff member
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Staff'
+      responses:
+        '200':
+          description: Staff created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  staffId:
+                    type: integer
+    get:
+      summary: Get all staff
+      responses:
+        '200':
+          description: List of staff
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Staff'
+
+  /staff/{id}:
+    get:
+      summary: Get staff by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Staff member
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Staff'
+        '404':
+          description: Staff not found
+
+  /skills:
+    post:
+      summary: Create a new skill
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Skill'
+      responses:
+        '200':
+          description: Skill created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  skillId:
+                    type: integer
+        '409':
+          description: Skill already exists
+    get:
+      summary: Get all skills
+      responses:
+        '200':
+          description: List of skills
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Skill'
+
+  /dayoffrequests:
+    post:
+      summary: Create a new day off request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DayOffRequest'
+      responses:
+        '200':
+          description: Day off request created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  requestId:
+                    type: integer
+
+  /shiftoffrequests:
+    post:
+      summary: Create a new shift off request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShiftOffRequest'
+      responses:
+        '200':
+          description: Shift off request created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  requestId:
+                    type: integer
+
+components:
+  schemas:
+    Contract:
+      type: object
+      properties:
+        ContractID:
+          type: integer
+        Description:
+          type: string
+        SingleAssignmentPerDay:
+          type: boolean
+        MaxNumAssignments:
+          type: integer
+        MinNumAssignments:
+          type: integer
+        MaxConsecutiveWorkingDays:
+          type: integer
+        MinConsecutiveWorkingDays:
+          type: integer
+        MaxConsecutiveFreeDays:
+          type: integer
+        MinConsecutiveFreeDays:
+          type: integer
+        MaxConsecutiveWorkingWeekends:
+          type: integer
+        MinConsecutiveWorkingWeekends:
+          type: integer
+        MaxWorkingWeekendsInFourWeeks:
+          type: integer
+        WeekendDefinition:
+          type: string
+        CompleteWeekends:
+          type: boolean
+        IdenticalShiftTypesDuringWeekend:
+          type: boolean
+        NoNightShiftBeforeFreeWeekend:
+          type: boolean
+        AlternativeSkillCategory:
+          type: boolean
+        UnwantedPatterns:
+          type: string
+
+    Staff:
+      type: object
+      properties:
+        StaffID:
+          type: integer
+        Name:
+          type: string
+        ContractID:
+          type: integer
+        SkillID:
+          type: integer
+
+    Skill:
+      type: object
+      properties:
+        SkillID:
+          type: integer
+        SkillName:
+          type: string
+
+    DayOffRequest:
+      type: object
+      properties:
+        employeeId:
+          type: integer
+        requestDate:
+          type: string
+          format: date
+        requestTypeId:
+          type: integer
+
+    ShiftOffRequest:
+      type: object
+      properties:
+        employeeId:
+          type: integer
+        requestDate:
+          type: string
+          format: date
+        requestTypeId:
+          type: integer
+        shift:
+          type: string

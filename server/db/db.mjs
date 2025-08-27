@@ -1,14 +1,12 @@
-const Database = require('better-sqlite3');
-const path = require('path');
-const fs = require('fs');
+import Database from 'better-sqlite3';
+import path from 'path';
+import fs from 'fs';
 
-const dbPath = path.join(__dirname, 'localdb.sqlite');
-const schemaPath = path.join(__dirname, 'schema.sql');
+const dbPath = path.join(path.dirname(import.meta.url.replace('file://', '')), 'localdb.sqlite');
+const schemaPath = path.join(path.dirname(import.meta.url.replace('file://', '')), 'schema.sql');
 
-// open or create database
 const db = new Database(dbPath);
 
-// Initialize schema if empty
 const initSchema = () => {
   const tables = db.prepare("SELECT name FROM sqlite_master WHERE type='table'").all();
   if (tables.length === 0) {
@@ -20,4 +18,4 @@ const initSchema = () => {
 
 initSchema();
 
-module.exports = db;
+export default db;
