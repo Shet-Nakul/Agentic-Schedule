@@ -1,5 +1,22 @@
 export default (db) => ({
   createContract: (contract) => {
+    // Only allow SQLite-supported types: number, string, bigint, buffer, or null
+    const safe = (v) => {
+      if (
+        v === undefined ||
+        v === null ||
+        typeof v === 'number' ||
+        typeof v === 'string' ||
+        typeof v === 'bigint'
+      ) {
+        return v ?? null;
+      }
+      if (typeof v === 'boolean') {
+        return v ? 1 : 0;
+      }
+      return null;
+    };
+
     const stmt = db.prepare(`
       INSERT INTO ContractsDetails (
         ContractID, Description, SingleAssignmentPerDay, MaxNumAssignments, MinNumAssignments,
@@ -10,11 +27,24 @@ export default (db) => ({
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     return stmt.run(
-      contract.ContractID, contract.Description, contract.SingleAssignmentPerDay, contract.MaxNumAssignments, contract.MinNumAssignments,
-      contract.MaxConsecutiveWorkingDays, contract.MinConsecutiveWorkingDays, contract.MaxConsecutiveFreeDays, contract.MinConsecutiveFreeDays,
-      contract.MaxConsecutiveWorkingWeekends, contract.MinConsecutiveWorkingWeekends, contract.MaxWorkingWeekendsInFourWeeks,
-      contract.WeekendDefinition, contract.CompleteWeekends, contract.IdenticalShiftTypesDuringWeekend, contract.NoNightShiftBeforeFreeWeekend,
-      contract.AlternativeSkillCategory, contract.UnwantedPatterns
+      safe(contract.ContractID),
+      safe(contract.Description),
+      safe(contract.SingleAssignmentPerDay),
+      safe(contract.MaxNumAssignments),
+      safe(contract.MinNumAssignments),
+      safe(contract.MaxConsecutiveWorkingDays),
+      safe(contract.MinConsecutiveWorkingDays),
+      safe(contract.MaxConsecutiveFreeDays),
+      safe(contract.MinConsecutiveFreeDays),
+      safe(contract.MaxConsecutiveWorkingWeekends),
+      safe(contract.MinConsecutiveWorkingWeekends),
+      safe(contract.MaxWorkingWeekendsInFourWeeks),
+      safe(contract.WeekendDefinition),
+      safe(contract.CompleteWeekends),
+      safe(contract.IdenticalShiftTypesDuringWeekend),
+      safe(contract.NoNightShiftBeforeFreeWeekend),
+      safe(contract.AlternativeSkillCategory),
+      safe(contract.UnwantedPatterns)
     );
   },
   getAllContracts: () => {

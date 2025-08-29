@@ -10,25 +10,118 @@ servers:
 paths:
   /contracts:
     post:
-      summary: Create a new contract
+      summary: Create one or multiple contracts
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Contract'
+              oneOf:
+                - $ref: '#/components/schemas/Contract'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/Contract'
+            examples:
+              SingleContract:
+                summary: Single contract object
+                value:
+                  ContractID: 1
+                  Description: "Sample contract"
+                  SingleAssignmentPerDay: true
+                  MaxNumAssignments: 5
+                  MinNumAssignments: 1
+                  MaxConsecutiveWorkingDays: 6
+                  MinConsecutiveWorkingDays: 2
+                  MaxConsecutiveFreeDays: 3
+                  MinConsecutiveFreeDays: 1
+                  MaxConsecutiveWorkingWeekends: 2
+                  MinConsecutiveWorkingWeekends: 1
+                  MaxWorkingWeekendsInFourWeeks: 3
+                  WeekendDefinition: "Sat-Sun"
+                  CompleteWeekends: true
+                  IdenticalShiftTypesDuringWeekend: false
+                  NoNightShiftBeforeFreeWeekend: false
+                  AlternativeSkillCategory: false
+                  UnwantedPatterns: ""
+              MultipleContracts:
+                summary: List of contract objects
+                value:
+                  - ContractID: 2
+                    Description: "Contract 2"
+                    SingleAssignmentPerDay: false
+                    MaxNumAssignments: 4
+                    MinNumAssignments: 2
+                    MaxConsecutiveWorkingDays: 5
+                    MinConsecutiveWorkingDays: 2
+                    MaxConsecutiveFreeDays: 2
+                    MinConsecutiveFreeDays: 1
+                    MaxConsecutiveWorkingWeekends: 1
+                    MinConsecutiveWorkingWeekends: 1
+                    MaxWorkingWeekendsInFourWeeks: 2
+                    WeekendDefinition: "Sat-Sun"
+                    CompleteWeekends: false
+                    IdenticalShiftTypesDuringWeekend: false
+                    NoNightShiftBeforeFreeWeekend: false
+                    AlternativeSkillCategory: false
+                    UnwantedPatterns: ""
+                  - ContractID: 3
+                    Description: "Contract 3"
+                    SingleAssignmentPerDay: true
+                    MaxNumAssignments: 6
+                    MinNumAssignments: 3
+                    MaxConsecutiveWorkingDays: 7
+                    MinConsecutiveWorkingDays: 2
+                    MaxConsecutiveFreeDays: 3
+                    MinConsecutiveFreeDays: 1
+                    MaxConsecutiveWorkingWeekends: 2
+                    MinConsecutiveWorkingWeekends: 1
+                    MaxWorkingWeekendsInFourWeeks: 4
+                    WeekendDefinition: "Fri-Sat"
+                    CompleteWeekends: true
+                    IdenticalShiftTypesDuringWeekend: true
+                    NoNightShiftBeforeFreeWeekend: true
+                    AlternativeSkillCategory: true
+                    UnwantedPatterns: ""
       responses:
-        '200':
-          description: Contract created
+        '201':
+          description: Contracts created
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                  ContractID:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
                     type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Contracts created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      contractIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1, 2, 3]
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
     get:
       summary: Get all contracts
       responses:
@@ -37,31 +130,135 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Contract'
-
-  /staff:
-    post:
-      summary: Create a new staff member
+                $ref: '#/components/schemas/StandardContractsListResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete contracts by list of ContractID
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Staff'
+              type: object
+              properties:
+                contractIds:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
       responses:
         '200':
+          description: Contracts deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Contracts deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 3
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /staff:
+    post:
+      summary: Create one or multiple staff members
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Staff'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/Staff'
+            examples:
+              SingleStaff:
+                summary: Single staff object
+                value:
+                  name: "John Doe"
+                  contractId: 1
+                  skillId: 2
+              MultipleStaff:
+                summary: List of staff objects
+                value:
+                  - name: "Jane Doe"
+                    contractId: 2
+                    skillId: 3
+                  - name: "Alice"
+                    contractId: 1
+                    skillId: 2
+      responses:
+        '201':
           description: Staff created
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                  staffId:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
                     type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Staff created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      staffIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1, 2, 3]
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
     get:
       summary: Get all staff
       responses:
@@ -70,9 +267,65 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Staff'
+                $ref: '#/components/schemas/StandardStaffListResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete staff by list of StaffID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                staffIds:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+      responses:
+        '200':
+          description: Staff deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Staff deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
 
   /staff/{id}:
     get:
@@ -89,33 +342,89 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Staff'
+                $ref: '#/components/schemas/StandardStaffResponse'
         '404':
           description: Staff not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
 
   /skills:
     post:
-      summary: Create a new skill
+      summary: Create one or multiple skills
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Skill'
+              oneOf:
+                - $ref: '#/components/schemas/Skill'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/Skill'
+            examples:
+              SingleSkill:
+                summary: Single skill object
+                value:
+                  skillName: "Nurse"
+              MultipleSkills:
+                summary: List of skill objects
+                value:
+                  - skillName: "Doctor"
+                  - skillName: "Technician"
       responses:
-        '200':
-          description: Skill created
+        '201':
+          description: Skills created
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                  skillId:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
                     type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Skills created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      skillIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1, 2, 3]
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
         '409':
           description: Skill already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
     get:
       summary: Get all skills
       responses:
@@ -124,53 +433,347 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Skill'
+                $ref: '#/components/schemas/StandardSkillsListResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete skills by list of SkillID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                skillIds:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+      responses:
+        '200':
+          description: Skills deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Skills deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
 
   /dayoffrequests:
     post:
-      summary: Create a new day off request
+      summary: Create one or multiple day off requests
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DayOffRequest'
+              oneOf:
+                - $ref: '#/components/schemas/DayOffRequest'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/DayOffRequest'
       responses:
-        '200':
-          description: Day off request created
+        '201':
+          description: Day off requests created
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                  requestId:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
                     type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Day off requests created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      requestIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1, 2, 3]
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    get:
+      summary: Get all day off requests
+      responses:
+        '200':
+          description: List of day off requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Day off requests fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      dayOffRequests:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/DayOffRequest'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete day off requests by list of RequestID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+      responses:
+        '200':
+          description: Day off requests deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Day off requests deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
 
   /shiftoffrequests:
     post:
-      summary: Create a new shift off request
+      summary: Create one or multiple shift off requests
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ShiftOffRequest'
+              oneOf:
+                - $ref: '#/components/schemas/ShiftOffRequest'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/ShiftOffRequest'
       responses:
-        '200':
-          description: Shift off request created
+        '201':
+          description: Shift off requests created
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                  requestId:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
                     type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Shift off requests created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      requestIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1, 2, 3]
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    get:
+      summary: Get all shift off requests
+      responses:
+        '200':
+          description: List of shift off requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Shift off requests fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      shiftOffRequests:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ShiftOffRequest'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete shift off requests by list of RequestID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestIds:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+      responses:
+        '200':
+          description: Shift off requests deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Shift off requests deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
 
 components:
   schemas:
@@ -257,3 +860,132 @@ components:
           type: integer
         shift:
           type: string
+
+    # Add standard response schemas
+    StandardSuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 201
+        success_message:
+          type: string
+          example: Resource created successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          example: { "contractId": 101 }
+
+    StandardErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        statusCode:
+          type: integer
+          example: 400
+        success_message:
+          type: string
+          example: ""
+        error_message:
+          type: string
+          example: "Invalid data"
+        payload:
+          type: object
+          example: {}
+
+    StandardContractsListResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 200
+        success_message:
+          type: string
+          example: Contracts fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            contracts:
+              type: array
+              items:
+                $ref: '#/components/schemas/Contract'
+
+    StandardStaffListResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 200
+        success_message:
+          type: string
+          example: Staff fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            staff:
+              type: array
+              items:
+                $ref: '#/components/schemas/Staff'
+
+    StandardStaffResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 200
+        success_message:
+          type: string
+          example: Staff fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            staff:
+              $ref: '#/components/schemas/Staff'
+
+    StandardSkillsListResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 200
+        success_message:
+          type: string
+          example: Skills fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            skills:
+              type: array
+              items:
+                $ref: '#/components/schemas/Skill'

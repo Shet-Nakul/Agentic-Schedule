@@ -6,6 +6,7 @@ import contractsApi from './api/contracts.mjs';
 import skillsApi from './api/skills.mjs';
 import dayOffRequestsApi from './api/dayOffRequests.mjs';
 import shiftOffRequestsApi from './api/shiftOffRequests.mjs';
+import licensesApi from './api/licenses.mjs';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
@@ -32,6 +33,7 @@ contractsApi(app, db);
 skillsApi(app, db);
 dayOffRequestsApi(app, db);
 shiftOffRequestsApi(app, db);
+licensesApi(app, db);
 
 const PORT = 3001;
 app.listen(PORT, () => {
