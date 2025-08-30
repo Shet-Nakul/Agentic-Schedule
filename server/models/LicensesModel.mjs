@@ -1,6 +1,9 @@
 import { DateTime } from 'luxon';
 export default (db) => ({
   createOrUpdateLicense: ({ start_date, end_date, region, status }) => {
+    if (!start_date || !end_date) {
+        return null;
+    }
     const tz = region || 'Asia/Kolkata';
 
     // Convert DD-MM-YYYY to ISO string in the given timezone
