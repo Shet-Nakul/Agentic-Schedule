@@ -1,10 +1,12 @@
+import { Router } from 'express';
 import StaffModel from '../models/StaffModel.mjs';
 
-export default (app, db) => {
+export default (app, db, hasActiveLicense) => {
+  const router = Router();
   const staffModel = StaffModel(db);
 
   // Create one or multiple staff members
-  app.post('/staff', (req, res) => {
+  router.post('/staff', (req, res) => {
     const staffList = Array.isArray(req.body) ? req.body : [req.body];
     const results = [];
     let hasError = false;
@@ -83,7 +85,7 @@ export default (app, db) => {
   });
 
   // Delete staff by list of StaffID
-  app.delete('/staff', (req, res) => {
+  router.delete('/staff', (req, res) => {
     const { staffIds } = req.body;
     if (!Array.isArray(staffIds) || staffIds.length === 0) {
       return res.status(400).json({
@@ -120,7 +122,7 @@ export default (app, db) => {
     }
   });
 
-  app.get('/staff', (req, res) => {
+  router.get('/staff', (req, res) => {
     try {
       const rows = staffModel.getAllStaff();
       res.status(200).json({
@@ -142,7 +144,7 @@ export default (app, db) => {
     }
   });
 
-  app.get('/staff/:id', (req, res) => {
+  router.get('/staff/:id', (req, res) => {
     try {
       const row = staffModel.getStaffById(req.params.id);
       if (!row) {
@@ -172,4 +174,6 @@ export default (app, db) => {
       });
     }
   });
+
+  app.use(router);
 };

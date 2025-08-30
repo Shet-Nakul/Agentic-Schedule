@@ -1,10 +1,12 @@
+import { Router } from 'express';
 import SkillsModel from '../models/SkillsModel.mjs';
 
-export default (app, db) => {
+export default (app, db, hasActiveLicense) => {
+  const router = Router();
   const skillsModel = SkillsModel(db);
 
   // Create one or multiple skills
-  app.post('/skills', (req, res) => {
+  router.post('/skills', (req, res) => {
     const skillsList = Array.isArray(req.body) ? req.body : [req.body];
     const results = [];
     let hasError = false;
@@ -64,7 +66,7 @@ export default (app, db) => {
   });
 
   // Delete skills by list of SkillID
-  app.delete('/skills', (req, res) => {
+  router.delete('/skills', (req, res) => {
     const { skillIds } = req.body;
     if (!Array.isArray(skillIds) || skillIds.length === 0) {
       return res.status(400).json({
@@ -102,7 +104,7 @@ export default (app, db) => {
   });
 
   // Get all skills
-  app.get('/skills', (req, res) => {
+  router.get('/skills', (req, res) => {
     try {
       const rows = skillsModel.getAllSkills();
       res.status(200).json({
@@ -125,7 +127,7 @@ export default (app, db) => {
   });
 
   // Get skill by ID
-  app.get('/skills/:id', (req, res) => {
+  router.get('/skills/:id', (req, res) => {
     try {
       const row = skillsModel.getSkillById(req.params.id);
       if (!row) {
@@ -155,4 +157,6 @@ export default (app, db) => {
       });
     }
   });
+
+  app.use(router);
 };

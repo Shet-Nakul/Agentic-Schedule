@@ -7,6 +7,7 @@ import skillsApi from './api/skills.mjs';
 import dayOffRequestsApi from './api/dayOffRequests.mjs';
 import shiftOffRequestsApi from './api/shiftOffRequests.mjs';
 import licensesApi from './api/licenses.mjs';
+import requestTypeApi from './api/requestType.mjs';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
@@ -16,6 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 
+// Create Express app
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -28,13 +30,19 @@ app.get('/', (req, res) => {
   res.send('✅ Server is running and DB is connected!');
 });
 
-staffApi(app, db);
-contractsApi(app, db);
-skillsApi(app, db);
-dayOffRequestsApi(app, db);
-shiftOffRequestsApi(app, db);
-licensesApi(app, db);
+// Initialize licenses API first so we can access the helper
+const licenses = licensesApi(app, db);
+const { hasValidActiveLicense } = licenses;
 
+// Initialize other APIs
+staffApi(app, db, hasValidActiveLicense);
+contractsApi(app, db, hasValidActiveLicense);
+skillsApi(app, db, hasValidActiveLicense);
+dayOffRequestsApi(app, db, hasValidActiveLicense);
+shiftOffRequestsApi(app, db, hasValidActiveLicense);
+requestTypeApi(app, db, hasValidActiveLicense);
+
+// Start server
 const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import ContractsModel from '../models/ContractsModel.mjs';
 
-export default (app, db) => {
+export default (app, db, hasActiveLicense) => {
   const router = Router();
   const contractsModel = ContractsModel(db);
 

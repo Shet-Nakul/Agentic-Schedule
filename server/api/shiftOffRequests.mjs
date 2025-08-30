@@ -1,10 +1,12 @@
+import { Router } from 'express';
 import ShiftOffRequestsModel from '../models/ShiftOffRequestsModel.mjs';
 
-export default (app, db) => {
+export default (app, db, hasActiveLicense) => {
+  const router = Router();
   const shiftOffRequestsModel = ShiftOffRequestsModel(db);
 
   // Create one or multiple ShiftOffRequests
-  app.post('/shiftoffrequests', (req, res) => {
+  router.post('/shiftoffrequests', (req, res) => {
     const requests = Array.isArray(req.body) ? req.body : [req.body];
     const results = [];
     let hasError = false;
@@ -54,7 +56,7 @@ export default (app, db) => {
   });
 
   // Delete shift off requests by list of RequestID
-  app.delete('/shiftoffrequests', (req, res) => {
+  router.delete('/shiftoffrequests', (req, res) => {
     const { requestIds } = req.body;
     if (!Array.isArray(requestIds) || requestIds.length === 0) {
       return res.status(400).json({
@@ -91,7 +93,7 @@ export default (app, db) => {
   });
 
   // Get all shift off requests
-  app.get('/shiftoffrequests', (req, res) => {
+  router.get('/shiftoffrequests', (req, res) => {
     try {
       const rows = shiftOffRequestsModel.getAllShiftOffRequests();
       res.status(200).json({
@@ -112,4 +114,6 @@ export default (app, db) => {
       });
     }
   });
+
+  app.use(router);
 };

@@ -1,10 +1,12 @@
+import { Router } from 'express';
 import DayOffRequestsModel from '../models/DayOffRequestsModel.mjs';
 
-export default (app, db) => {
+export default (app, db, hasActiveLicense) => {
+  const router = Router();
   const dayOffRequestsModel = DayOffRequestsModel(db);
 
   // Create one or multiple DayOffRequests
-  app.post('/dayoffrequests', async (req, res) => {
+  router.post('/dayoffrequests', async (req, res) => {
     const requests = Array.isArray(req.body) ? req.body : [req.body];
     const results = [];
     let hasError = false;
@@ -85,7 +87,7 @@ export default (app, db) => {
   });
 
   // Delete day off requests by list of RequestID
-  app.delete('/dayoffrequests', (req, res) => {
+  router.delete('/dayoffrequests', (req, res) => {
     const { requestIds } = req.body;
     if (!Array.isArray(requestIds) || requestIds.length === 0) {
       return res.status(400).json({
@@ -122,7 +124,7 @@ export default (app, db) => {
   });
 
   // Get all day off requests
-  app.get('/dayoffrequests', (req, res) => {
+  router.get('/dayoffrequests', (req, res) => {
     try {
       const rows = dayOffRequestsModel.getAllDayOffRequests();
       res.status(200).json({
@@ -143,4 +145,5 @@ export default (app, db) => {
       });
     }
   });
+  app.use(router);
 };

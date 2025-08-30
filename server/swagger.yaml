@@ -4,9 +4,6 @@ info:
   version: 1.0.0
   description: API documentation for Contracts, Staff, Skills, DayOffRequests, and ShiftOffRequests
 
-servers:
-  - url: /
-
 paths:
   /contracts:
     post:
@@ -775,6 +772,400 @@ paths:
               schema:
                 $ref: '#/components/schemas/StandardErrorResponse'
 
+  /requesttype:
+    post:
+      summary: Create one or multiple request types
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/RequestType'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/RequestType'
+            examples:
+              SingleRequestType:
+                summary: Single request type object
+                value:
+                  RequestTypeName: "Vacation"
+                  RequestTypeDesc: "Vacation leave"
+              MultipleRequestTypes:
+                summary: List of request type objects
+                value:
+                  - RequestTypeName: "Sick"
+                    RequestTypeDesc: "Sick leave"
+                  - RequestTypeName: "Personal"
+                    RequestTypeDesc: "Personal leave"
+      responses:
+        '201':
+          description: Request types created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Request types created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      requestTypeIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1, 2]
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    get:
+      summary: Get all request types
+      responses:
+        '200':
+          description: List of request types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Request types fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      requestTypes:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/RequestType'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete request types by list of RequestTypeID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requestTypeIds:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2]
+      responses:
+        '200':
+          description: Request types deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Request types deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /requesttype/{id}:
+    get:
+      summary: Get request type by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Request type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: RequestType fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      requestType:
+                        $ref: '#/components/schemas/RequestType'
+        '404':
+          description: Request type not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /licenses:
+    post:
+      summary: Verify license and extract details from uploaded files
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pemFile:
+                  type: string
+                  format: binary
+                  description: PEM public key file
+                licFile:
+                  type: string
+                  format: binary
+                  description: License file (.lic)
+            encoding:
+              pemFile:
+                contentType: application/octet-stream
+              licFile:
+                contentType: application/octet-stream
+      responses:
+        '201':
+          description: License verification result and extracted details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: License verified
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      start_date:
+                        type: string
+                        example: "01-01-2024"
+                      end_date:
+                        type: string
+                        example: "01-01-2025"
+                      timezone:
+                        type: string
+                        example: "Asia/Kolkata"
+                      status:
+                        type: string
+                        example: "active"
+                      python_output:
+                        type: string
+                        example: "✅ License valid from 01-01-2024 to 01-01-2025 (Asia/Kolkata)"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    get:
+      summary: Get all licenses
+      responses:
+        '200':
+          description: List of licenses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Licenses fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      licenses:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/License'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+  
+  /licenses/{id}:
+    delete:
+      summary: Delete a license by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the license to delete
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: License deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: License deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    example:
+                      deleted: 1
+        '404':
+          description: License not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /machine-id:
+    get:
+      summary: Get unique machine identifier
+      responses:
+        '200':
+          description: Machine identifier fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Machine identifier fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      machineId:
+                        type: string
+                        example: "hashedid-00:11:22:33:44:55-Intel(R) CPU"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
 components:
   schemas:
     Contract:
@@ -859,6 +1250,36 @@ components:
         requestTypeId:
           type: integer
         shift:
+          type: string
+
+    RequestType:
+      type: object
+      properties:
+        RequestTypeID:
+          type: integer
+        RequestTypeName:
+          type: string
+        RequestTypeDesc:
+          type: string
+
+    License:
+      type: object
+      properties:
+        license_id:
+          type: integer
+        license_key:
+          type: string
+        issued_at:
+          type: string
+          format: date
+        expires_at:
+          type: string
+          format: date
+        status:
+          type: string
+        created_at:
+          type: string
+        updated_at:
           type: string
 
     # Add standard response schemas
@@ -989,3 +1410,38 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Skill'
+
+    StandardRequestTypesListResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 200
+        success_message:
+          type: string
+          example: Request types fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            requestTypes:
+              type: array
+              items:
+                $ref: '#/components/schemas/RequestType'
+          type: string
+          example: Request types fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            requestTypes:
+              type: array
+              items:
+                $ref: '#/components/schemas/RequestType'

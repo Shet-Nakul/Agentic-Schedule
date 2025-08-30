@@ -1,36 +1,41 @@
+import { DateTime } from 'luxon';
 export default (db) => ({
-  createLicense: ({ license_key, issued_at, expires_at, status }) => {
-    const safe = (v) => {
-      if (
-        v === undefined ||
-        v === null ||
-        typeof v === 'number' ||
-        typeof v === 'string' ||
-        typeof v === 'bigint'
-      ) {
-        return v ?? null;
-      }
-      if (typeof v === 'boolean') {
-        return v ? 1 : 0;
-      }
-      return null;
-    };
-    const stmt = db.prepare(
-      `INSERT INTO licenses (license_key, issued_at, expires_at, status)
-       VALUES (?, ?, ?, ?)`
-    );
-    return stmt.run(
-      safe(license_key),
-      safe(issued_at),
-      safe(expires_at),
-      safe(status) || 'active'
-    );
+  createOrUpdateLicense: ({ start_date, end_date, region, status }) => {
+    const tz = region || 'Asia/Kolkata';
+
+    // Convert DD-MM-YYYY to ISO string in the given timezone
+    const startISO = DateTime.fromFormat(start_date, 'dd-MM-yyyy', { zone: tz }).toISO();
+    const endISO = DateTime.fromFormat(end_date, 'dd-MM-yyyy', { zone: tz }).endOf('day').toISO();
+
+    const now = DateTime.now().setZone(tz).toISO();
+
+    // Check if a license already exists with same start/end dates
+    const existing = db.prepare(
+      "SELECT * FROM licenses WHERE start_date = ? AND end_date = ?"
+    ).get(startISO, endISO);
+
+    if (existing) {
+      // Update existing record
+      const stmt = db.prepare(
+        `UPDATE licenses
+         SET region = ?, status = ?, created_at = ?
+         WHERE license_id = ?`
+      );
+      return stmt.run(region, status || 'active', now, existing.license_id);
+    } else {
+      // Insert new license
+      const stmt = db.prepare(
+        `INSERT INTO licenses (start_date, end_date, region, status, created_at)
+         VALUES (?, ?, ?, ?, ?)`
+      );
+      return stmt.run(startISO, endISO, region, status || 'active', now);
+    }
   },
-  getAllLicenses: () => {
-    return db.prepare("SELECT * FROM licenses").all();
-  },
-  getLicenseById: (license_id) => {
-    return db.prepare("SELECT * FROM licenses WHERE license_id = ?").get(license_id);
+
+  getAllLicenses: () => db.prepare("SELECT * FROM licenses").all(),
+  updateLicenseStatus: (license_id, newStatus) => {
+    const stmt = db.prepare("UPDATE licenses SET status = ? WHERE license_id = ?");
+    return stmt.run(newStatus, license_id);
   },
   deleteLicenses: (licenseIds) => {
     const stmt = db.prepare("DELETE FROM licenses WHERE license_id = ?");

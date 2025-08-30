@@ -66,3 +66,18 @@ CREATE TABLE ShiftRequirements (
     Preferred INTEGER,
     FOREIGN KEY (SkillID) REFERENCES Skills(SkillID)
 );
+
+CREATE TABLE licenses (
+    license_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    start_date TEXT NOT NULL,       -- License start date (e.g., "01-09-2025")
+    end_date TEXT NOT NULL,         -- License expiry date
+    region TEXT DEFAULT 'Asia/Kolkata',  -- Time zone
+    status TEXT DEFAULT 'active',   -- active, expired, invalid, etc.
+    created_at TEXT DEFAULT (datetime('now'))  -- Record creation timestamp
+);
+
+-- Create index on created_at for faster queries by creation date
+CREATE INDEX idx_licenses_created_at ON licenses(created_at);
+
+-- Create index on end_date for faster queries by expiry date
+CREATE INDEX idx_licenses_end_date ON licenses(end_date);
