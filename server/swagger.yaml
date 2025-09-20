@@ -187,144 +187,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/StandardErrorResponse'
 
-  /staff:
-    post:
-      summary: Create one or multiple staff members
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              oneOf:
-                - $ref: '#/components/schemas/Staff'
-                - type: array
-                  items:
-                    $ref: '#/components/schemas/Staff'
-            examples:
-              SingleStaff:
-                summary: Single staff object
-                value:
-                  name: "John Doe"
-                  contractId: 1
-                  skillId: 2
-              MultipleStaff:
-                summary: List of staff objects
-                value:
-                  - name: "Jane Doe"
-                    contractId: 2
-                    skillId: 3
-                  - name: "Alice"
-                    contractId: 1
-                    skillId: 2
-      responses:
-        '201':
-          description: Staff created
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 201
-                  success_message:
-                    type: string
-                    example: Staff created successfully
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-                    properties:
-                      staffIds:
-                        type: array
-                        items:
-                          type: integer
-                        example: [1, 2, 3]
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-    get:
-      summary: Get all staff
-      responses:
-        '200':
-          description: List of staff
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardStaffListResponse'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-    delete:
-      summary: Delete staff by list of StaffID
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                staffIds:
-                  type: array
-                  items:
-                    type: integer
-                  example: [1, 2, 3]
-      responses:
-        '200':
-          description: Staff deleted successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 200
-                  success_message:
-                    type: string
-                    example: Staff deleted successfully
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-                    properties:
-                      deletedCount:
-                        type: integer
-                        example: 2
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
 
-  /staff/{id}:
     get:
       summary: Get staff by ID
       parameters:
@@ -973,6 +836,695 @@ paths:
               schema:
                 $ref: '#/components/schemas/StandardErrorResponse'
 
+  /startEvent:
+    post:
+      summary: Trigger a scheduling event (staff roster or operational schedule)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eventName:
+                  type: string
+                  description: Name of the event to trigger
+                  enum: [staff roster, operational schedule]
+                horizon:
+                  type: integer
+                  description: Number of days/weeks for the scheduling horizon
+                start_date:
+                  type: string
+                  format: date
+                  description: Start date of the event horizon
+                end_date:
+                  type: string
+                  format: date
+                  description: End date of the event horizon
+              required:
+                - eventName
+                - horizon
+                - start_date
+                - end_date
+            examples:
+              StaffRoster:
+                summary: Staff roster event example
+                value:
+                  eventName: "staff roster"
+                  horizon: 14
+                  start_date: "2025-09-20"
+                  end_date: "2025-10-03"
+              OperationalSchedule:
+                summary: Operational schedule event example
+                value:
+                  eventName: "operational schedule"
+                  horizon: 7
+                  start_date: "2025-09-20"
+                  end_date: "2025-09-27"
+      responses:
+        '200':
+          description: Event triggered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Event 'staff roster' triggered successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      eventName:
+                        type: string
+                        example: staff roster
+                      timestamp:
+                        type: string
+                        format: date-time
+                        example: "2025-09-20T12:34:56.789Z"
+                      eventDetails:
+                        type: object
+                        description: Details of the triggered event
+                        properties:
+                          eventType:
+                            type: string
+                            example: staff_roster
+                          description:
+                            type: string
+                            example: Staff roster generation and management event
+                          action:
+                            type: string
+                            example: generate_roster
+                          dataFetched:
+                            type: object
+                            properties:
+                              skillsData:
+                                type: array
+                                items:
+                                  type: string
+                                example: ["Skill A", "Skill B"]
+                              shiftsData:
+                                type: array
+                                items:
+                                  type: string
+                                example: ["D", "L", "N"]
+                              employees:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    contract_id:
+                                      type: string
+                                    name:
+                                      type: string
+                                    skills:
+                                      type: array
+                                      items:
+                                        type: string
+                              contracts:
+                                type: array
+                                items:
+                                  type: object
+                              dayOffRequests:
+                                type: array
+                                items:
+                                  type: object
+                              shiftOffRequests:
+                                type: array
+                                items:
+                                  type: object
+                              requirements:
+                                type: array
+                                items:
+                                  type: object
+                          externalApiResponse:
+                            type: object
+                            description: Response returned by the external API
+        '400':
+          description: Bad request due to missing or invalid fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error while triggering the event
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /employeeSchedule:
+    post:
+      summary: Create one or multiple employee schedules
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/EmployeeScheduleCreate'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/EmployeeScheduleCreate'
+            examples:
+              SingleSchedule:
+                summary: Single schedule
+                value:
+                  date: "2025-09-21"
+                  employee_id: 1
+                  shift: "D"
+                  working: true
+              MultipleSchedules:
+                summary: Multiple schedules
+                value:
+                  - date: "2025-09-21"
+                    employee_id: 1
+                    shift: "D"
+                    working: true
+                  - date: "2025-09-22"
+                    employee_id: 2
+                    shift: "L"
+                    working: false
+      responses:
+        '201':
+          description: Employee schedules created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeScheduleCreateResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+    delete:
+      summary: Delete employee schedules by list of ScheduleIDs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scheduleIds:
+                  type: array
+                  items:
+                    type: string
+                  example: ["uuid1", "uuid2"]
+      responses:
+        '200':
+          description: Employee schedules deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Employee schedules deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+    get:
+      summary: Get all employee schedules
+      responses:
+        '200':
+          description: List of employee schedules
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Employee schedules fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      schedules:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/EmployeeScheduleResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /employeeSchedule/{id}:
+    get:
+      summary: Get employee schedule by ScheduleID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Employee schedule details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Employee schedule fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      schedule:
+                        $ref: '#/components/schemas/EmployeeScheduleResponse'
+        '404':
+          description: Schedule not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /employeeSchedule/employee/{employeeId}:
+    get:
+      summary: Get schedules for a specific employee
+      parameters:
+        - in: path
+          name: employeeId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Employee schedules
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Employee schedules fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      schedules:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/EmployeeScheduleResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /employeeSchedule/date/{date}:
+    get:
+      summary: Get schedules for a specific date
+      parameters:
+        - in: path
+          name: date
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Employee schedules
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeScheduleListResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /employeeSchedule/date-range/{startDate}/{endDate}:
+    get:
+      summary: Get schedules for a date range
+      parameters:
+        - in: path
+          name: startDate
+          required: true
+          schema:
+            type: string
+            format: date
+        - in: path
+          name: endDate
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Employee schedules
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeScheduleListResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /staff:
+    post:
+      summary: Create one or multiple staff members with skills and shifts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/StaffCreate'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/StaffCreate'
+            examples:
+              SingleStaff:
+                summary: Single staff object
+                value:
+                  name: "John Doe"
+                  contractId: 1
+                  skills: [1, 2]
+                  shifts: ["D", "L"]
+              MultipleStaff:
+                summary: Multiple staff objects
+                value:
+                  - name: "Jane Doe"
+                    contractId: 2
+                    skills: [1, 3]
+                    shifts: ["N", "DH"]
+                  - name: "Alice"
+                    contractId: 1
+                    skills: [2]
+                    shifts: ["L"]
+      responses:
+        '201':
+          description: Staff created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Staff created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      staffIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1, 2]
+        '400':
+          description: Bad request due to missing or invalid fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+    put:
+      summary: Update a staff member by ID (name, contract, skills, shifts)
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StaffUpdate'
+            examples:
+              UpdateStaff:
+                value:
+                  name: "Jane Doe"
+                  contractId: 2
+                  skills: [1, 3]
+                  shifts: ["N", "DH"]
+      responses:
+        '200':
+          description: Staff updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardSuccessResponse'
+        '400':
+          description: Bad request due to invalid contract, skill, or shift
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '404':
+          description: Staff not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+    delete:
+      summary: Delete staff members by list of IDs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                staffIds:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+      responses:
+        '200':
+          description: Staff deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Staff deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+    get:
+      summary: Get all staff members with skills and shifts
+      responses:
+        '200':
+          description: List of all staff
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Staff fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      staff:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/StaffResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+    /staff/{id}:
+      get:
+        summary: Get a staff member by ID with skills and shifts
+        parameters:
+          - in: path
+            name: id
+            required: true
+            schema:
+              type: integer
+        responses:
+          '200':
+            description: Staff member details
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    status:
+                      type: string
+                      example: success
+                    statusCode:
+                      type: integer
+                      example: 200
+                    success_message:
+                      type: string
+                      example: Staff fetched successfully
+                    error_message:
+                      type: string
+                      example: ""
+                    payload:
+                      type: object
+                      properties:
+                        staff:
+                          $ref: '#/components/schemas/StaffResponse'
+          '404':
+            description: Staff not found
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/StandardErrorResponse'
+          '500':
+            description: Internal server error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/StandardErrorResponse'
+
   /licenses:
     post:
       summary: Verify license and extract details from uploaded files
@@ -1165,6 +1717,200 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StandardErrorResponse'
+
+components:
+  schemas:
+    EmployeeScheduleCreate:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        employee_id:
+          type: integer
+        shift:
+          type: string
+        working:
+          type: boolean
+      required:
+        - date
+        - employee_id
+
+    EmployeeScheduleResponse:
+      type: object
+      properties:
+        scheduleId:
+          type: string
+        date:
+          type: string
+          format: date
+        employeeId:
+          type: integer
+        shift:
+          type: string
+        working:
+          type: boolean
+
+    EmployeeScheduleCreateResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 201
+        success_message:
+          type: string
+          example: Employee schedules created successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            batchId:
+              type: string
+              format: uuid
+            employeeIds:
+              type: array
+              items:
+                type: integer
+              example: [1, 2]
+
+    EmployeeScheduleListResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 200
+        success_message:
+          type: string
+          example: Employee schedules fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            schedules:
+              type: array
+              items:
+                $ref: '#/components/schemas/EmployeeScheduleResponse'
+
+    StandardErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        statusCode:
+          type: integer
+          example: 400
+        success_message:
+          type: string
+          example: ""
+        error_message:
+          type: string
+          example: "Invalid input"
+        payload:
+          type: object
+          example: {}
+
+components:
+    schemas:
+      StaffCreate:
+        type: object
+        properties:
+          name:
+            type: string
+          contractId:
+            type: integer
+          skills:
+            type: array
+            items:
+              type: integer
+          shifts:
+            type: array
+            items:
+              type: string
+        required:
+          - name
+          - contractId
+
+      StaffUpdate:
+        type: object
+        properties:
+          name:
+            type: string
+          contractId:
+            type: integer
+          skills:
+            type: array
+            items:
+              type: integer
+          shifts:
+            type: array
+            items:
+              type: string
+
+      StaffResponse:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          contractId:
+            type: integer
+          skills:
+            type: array
+            items:
+              type: integer
+          shifts:
+            type: array
+            items:
+              type: string
+
+      StandardErrorResponse:
+        type: object
+        properties:
+          status:
+            type: string
+            example: error
+          statusCode:
+            type: integer
+            example: 400
+          success_message:
+            type: string
+            example: ""
+          error_message:
+            type: string
+            example: "Invalid input"
+          payload:
+            type: object
+            example: {}
+
+      StandardSuccessResponse:
+        type: object
+        properties:
+          status:
+            type: string
+            example: success
+          statusCode:
+            type: integer
+            example: 200
+          success_message:
+            type: string
+            example: Staff updated successfully
+          error_message:
+            type: string
+            example: ""
+          payload:
+            type: object
 
 components:
   schemas:

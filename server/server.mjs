@@ -8,6 +8,9 @@ import dayOffRequestsApi from './api/dayOffRequests.mjs';
 import shiftOffRequestsApi from './api/shiftOffRequests.mjs';
 import licensesApi from './api/licenses.mjs';
 import requestTypeApi from './api/requestType.mjs';
+import startEventApi from './api/startEvent.mjs';
+import employeeScheduleApi from './api/employeeSchedule.mjs';
+import shiftsApi from './api/shifts.mjs';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
@@ -41,6 +44,9 @@ skillsApi(app, db, hasValidActiveLicense);
 dayOffRequestsApi(app, db, hasValidActiveLicense);
 shiftOffRequestsApi(app, db, hasValidActiveLicense);
 requestTypeApi(app, db, hasValidActiveLicense);
+startEventApi(app, db, hasValidActiveLicense);
+employeeScheduleApi(app, db, hasValidActiveLicense);
+shiftsApi(app, db, hasValidActiveLicense);
 
 // Start server
 const PORT = 3001;

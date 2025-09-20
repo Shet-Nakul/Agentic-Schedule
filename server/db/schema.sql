@@ -34,9 +34,23 @@ CREATE TABLE Staff (
     StaffID INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100),
     ContractID INTEGER,
-    SkillID INTEGER,
     FOREIGN KEY (ContractID) REFERENCES ContractsDetails(ContractID),
+);
+
+CREATE TABLE StaffSkills (
+    StaffID INTEGER,
+    SkillID INTEGER,
+    PRIMARY KEY (StaffID, SkillID),
+    FOREIGN KEY (StaffID) REFERENCES Staff(StaffID),
     FOREIGN KEY (SkillID) REFERENCES Skills(SkillID)
+);
+
+CREATE TABLE StaffShifts (
+    StaffID INTEGER,
+    ShiftCode VARCHAR(10),
+    PRIMARY KEY (StaffID, ShiftCode),
+    FOREIGN KEY (StaffID) REFERENCES Staff(StaffID),
+    FOREIGN KEY (ShiftCode) REFERENCES Shifts(ShiftCode)
 );
 
 CREATE TABLE DayOffRequests (
@@ -46,6 +60,14 @@ CREATE TABLE DayOffRequests (
     RequestTypeID INTEGER,
     FOREIGN KEY (RequestTypeID) REFERENCES RequestType(RequestTypeID),
     FOREIGN KEY (EmployeeID) REFERENCES Staff(StaffID)
+);
+
+CREATE TABLE Shifts (
+    ShiftID INTEGER PRIMARY KEY AUTOINCREMENT,
+    ShiftName VARCHAR(50),    -- e.g., Morning, Evening, Night
+    ShiftCode VARCHAR(10),    -- e.g., D, L, N, DH, DL, DN, etc.
+    StartTime TIME,           -- e.g., 09:00
+    EndTime TIME              -- e.g., 17:00
 );
 
 CREATE TABLE ShiftOffRequests (
@@ -81,3 +103,12 @@ CREATE INDEX idx_licenses_created_at ON licenses(created_at);
 
 -- Create index on end_date for faster queries by expiry date
 CREATE INDEX idx_licenses_end_date ON licenses(end_date);
+
+CREATE TABLE EmployeeSchedule (
+    ScheduleID TEXT PRIMARY KEY,      -- UUID comes from backend
+    Date DATE NOT NULL,
+    EmployeeID INTEGER NOT NULL,
+    Shift VARCHAR(10),
+    Working BOOLEAN NOT NULL DEFAULT 0,
+    FOREIGN KEY (EmployeeID) REFERENCES Staff(StaffID)
+);

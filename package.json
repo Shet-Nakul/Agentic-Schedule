@@ -5,6 +5,7 @@
   "main": "electron/main.js",
   "scripts": {
     "start": "node scripts/dev.js",
+    "server": "node server/server.mjs",
     "build": "node scripts/build.js"
   },
   "dependencies": {
@@ -17,6 +18,7 @@
     "node-machine-id": "^1.1.12",
     "sqlite3": "^5.1.6",
     "swagger-ui-express": "^5.0.1",
+    "uuid": "^9.0.1",
     "yamljs": "^0.3.0"
   }
 }
