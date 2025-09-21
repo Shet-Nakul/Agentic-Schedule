@@ -34,7 +34,7 @@ CREATE TABLE Staff (
     StaffID INTEGER PRIMARY KEY AUTOINCREMENT,
     Name VARCHAR(100),
     ContractID INTEGER,
-    FOREIGN KEY (ContractID) REFERENCES ContractsDetails(ContractID),
+    FOREIGN KEY (ContractID) REFERENCES ContractsDetails(ContractID)
 );
 
 CREATE TABLE StaffSkills (
