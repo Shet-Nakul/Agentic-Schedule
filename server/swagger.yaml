@@ -1616,6 +1616,56 @@ paths:
               schema:
                 $ref: '#/components/schemas/StandardErrorResponse'
 
+  /reciveEventResult:
+    post:
+      summary: Receive event result (placeholder endpoint)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: Status of the event result
+                  example: completed
+                message:
+                  type: string
+                  description: Message regarding the event result
+                  example: done
+                payload:
+                  type: object
+                  description: Payload containing event result data
+      responses:
+        '200':
+          description: Event result received
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Event result received
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
   /employeeSchedule:
     post:
       summary: Create one or multiple employee schedules

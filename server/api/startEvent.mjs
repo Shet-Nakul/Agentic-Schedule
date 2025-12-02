@@ -214,5 +214,18 @@ export default (app, db, hasActiveLicense) => {
     }
   });
 
+  router.post('/reciveEventResult', (req, res) => {
+    const { status, message, payload } = req.body;
+    console.log('Received event result:', { status, message, payload });
+    // Placeholder for receiving event results
+    res.status(200).json({
+      status: "success",
+      statusCode: 200,
+      success_message: "Event result received",
+      error_message: "",
+      payload: {}
+    });
+  });
+
   app.use(router);
 };
