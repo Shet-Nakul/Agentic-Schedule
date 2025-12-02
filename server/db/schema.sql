@@ -82,10 +82,10 @@ CREATE TABLE ShiftOffRequests (
 
 CREATE TABLE ShiftRequirements (
     RequirementID INTEGER PRIMARY KEY AUTOINCREMENT,
-    DayOfWeek VARCHAR(20),
-    Shift VARCHAR(10),
-    SkillID INTEGER,
-    Preferred INTEGER,
+    Date DATE NOT NULL,
+    Shift VARCHAR(10) NOT NULL,
+    SkillID INTEGER NOT NULL,
+    Preferred INTEGER DEFAULT 0,
     FOREIGN KEY (SkillID) REFERENCES Skills(SkillID)
 );
 

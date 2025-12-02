@@ -170,7 +170,7 @@ export default (app, db, hasActiveLicense) => {
         };
 
         // 10. Send to external API
-        const externalApiResponse = await fetch('http://127.0.0.1:8000/', {
+        const externalApiResponse = await fetch('http://127.0.0.1:8000/shift_assignments/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(externalApiPayload)
