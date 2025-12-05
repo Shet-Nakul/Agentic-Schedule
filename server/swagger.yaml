@@ -2145,6 +2145,280 @@ paths:
               schema:
                 $ref: '#/components/schemas/StandardErrorResponse'
 
+  /shiftrequirements:
+    post:
+      summary: Create one or multiple shift requirements
+      description: Create shift requirement entries (single object or array)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/ShiftRequirementCreate'
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/ShiftRequirementCreate'
+            examples:
+              SingleRequirement:
+                value:
+                  date: "2025-12-07"
+                  shift: "D"
+                  skillId: 2
+                  preferred: 1
+      responses:
+        '201':
+          description: Shift requirements created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: Shift requirements created successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      requirementIds:
+                        type: array
+                        items:
+                          type: integer
+                        example: [1]
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    get:
+      summary: Get all shift requirements
+      responses:
+        '200':
+          description: List of shift requirements
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShiftRequirementListResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete shift requirements by list of RequirementID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requirementIds:
+                  type: array
+                  items:
+                    type: integer
+              example:
+                requirementIds: [1, 2]
+      responses:
+        '200':
+          description: Shift requirements deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Shift requirements deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      deletedCount:
+                        type: integer
+                        example: 2
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /shiftrequirements/{id}:
+    get:
+      summary: Get shift requirement by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Shift requirement
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Shift requirement fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      requirement:
+                        $ref: '#/components/schemas/ShiftRequirementResponse'
+        '404':
+          description: Shift requirement not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    put:
+      summary: Update shift requirement by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShiftRequirementCreate'
+            examples:
+              UpdateRequirement:
+                value:
+                  date: "2025-12-07"
+                  shift: "D"
+                  skillId: 2
+                  preferred: 0
+      responses:
+        '200':
+          description: Shift requirement updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardSuccessResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '404':
+          description: Shift requirement not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    delete:
+      summary: Delete shift requirement by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Shift requirement deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardSuccessResponse'
+        '404':
+          description: Shift requirement not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /shiftrequirements/date/{date}:
+    get:
+      summary: Get shift requirements by date
+      parameters:
+        - in: path
+          name: date
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Shift requirements for date
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShiftRequirementListResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
 components:
   schemas:
     EmployeeScheduleCreate:
@@ -2385,6 +2659,66 @@ components:
           type: string
         endTime:
           type: string
+
+    ShiftRequirementCreate:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+          example: "2025-12-07"
+        shift:
+          type: string
+          example: "D"
+        skillId:
+          type: integer
+          example: 2
+        preferred:
+          type: integer
+          description: 1 if preferred, 0 otherwise
+          example: 1
+      required:
+        - date
+        - shift
+        - skillId
+
+    ShiftRequirementResponse:
+      type: object
+      properties:
+        RequirementID:
+          type: integer
+        Date:
+          type: string
+          format: date
+        Shift:
+          type: string
+        SkillID:
+          type: integer
+        Preferred:
+          type: integer
+
+    ShiftRequirementListResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        statusCode:
+          type: integer
+          example: 200
+        success_message:
+          type: string
+          example: Shift requirements fetched successfully
+        error_message:
+          type: string
+          example: ""
+        payload:
+          type: object
+          properties:
+            shiftRequirements:
+              type: array
+              items:
+                $ref: '#/components/schemas/ShiftRequirementResponse'
 
     DayOffRequest:
       type: object
