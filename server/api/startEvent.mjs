@@ -155,8 +155,8 @@ export default (app, db, hasActiveLicense) => {
         const externalApiPayload = {
           skills: skillsData,
           shifts: shiftsData,
-          employee_ids: allStaff.map(e => e.StaffID),
-          contract_ids: contractRows.map(c => c.ContractID),
+          employee_ids: allStaff.map(e => e.StaffID.toString()),
+          contract_ids: contractRows.map(c => c.ContractID.toString()),
           horizon,
           start_date,
           end_date,
@@ -168,8 +168,6 @@ export default (app, db, hasActiveLicense) => {
           forbidden_patterns: [],
           history
         };
-
-        console.log(JSON.stringify(externalApiPayload));
 
         // 10. Send to external API
         const externalApiResponse = await fetch('http://127.0.0.1:8000/shift_assignments/', {
