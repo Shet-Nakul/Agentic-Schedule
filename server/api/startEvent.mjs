@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import SkillsModel from '../models/SkillsModel.mjs';
+import EventResultModel from '../models/EventResultModel.mjs';
 import fetch from 'node-fetch'; // Ensure node-fetch installed for external API
 
 export default (app, db, hasActiveLicense) => {
   const router = Router();
   const skillsModel = SkillsModel(db);
+  const eventResultModel = EventResultModel(db);
 
   router.post('/startEvent', async (req, res) => {
     const { eventName, horizon, start_date, end_date } = req.body;
@@ -219,6 +221,15 @@ export default (app, db, hasActiveLicense) => {
   router.post('/reciveEventResult', (req, res) => {
     const { status, message, payload } = req.body;
     console.log('Received event result:', { status, message, payload });
+    // Delete previous staff_roster results, then insert this new result
+    try {
+      eventResultModel.deleteEventResultsByType('staff_roster');
+      // store message -> Message column, payload -> EventData (stringify if object)
+      const eventDataStr = typeof payload === 'string' ? payload : JSON.stringify(payload || {});
+      eventResultModel.createEventResult({ eventType: 'staff_roster', message: message, eventData: eventDataStr });
+    } catch (err) {
+      console.error('Failed to save event result:', err);
+    }
     // Placeholder for receiving event results
     res.status(200).json({
       status: "success",
