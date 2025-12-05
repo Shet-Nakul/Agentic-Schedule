@@ -1,4 +1,5 @@
-export default (db) => ({
+export default (db) => {
+  const model = {
   createStaff: ({ name, contractId, skillId }) => {
     const safe = (v) => {
       if (
@@ -55,10 +56,13 @@ export default (db) => ({
     return stmt.run(staffId);
   },
   deleteStaffList: (staffIds) => {
-    const stmt = db.prepare("DELETE FROM Staff WHERE StaffID = ?");
+    const deleteStaffStmt = db.prepare("DELETE FROM Staff WHERE StaffID = ?");
     let deleted = 0;
     for (const id of staffIds) {
-      const result = stmt.run(id);
+      // Cascade delete child references first
+      db.prepare("DELETE FROM StaffSkills WHERE StaffID = ?").run(id);
+      db.prepare("DELETE FROM StaffShifts WHERE StaffID = ?").run(id);
+      const result = deleteStaffStmt.run(id);
       deleted += result.changes;
     }
     return { changes: deleted };
@@ -119,17 +123,17 @@ export default (db) => ({
   // Combined operations
   createStaffWithSkillsAndShifts: ({ name, contractId, skills = [], shifts = [] }) => {
     // Create staff
-    const staffResult = this.createStaff({ name, contractId });
+    const staffResult = model.createStaff({ name, contractId });
     const staffId = staffResult.lastInsertRowid;
     
     // Assign skills if provided
     if (skills.length > 0) {
-      this.assignSkills(staffId, skills);
+      model.assignSkills(staffId, skills);
     }
     
     // Assign shifts if provided
     if (shifts.length > 0) {
-      this.assignShifts(staffId, shifts);
+      model.assignShifts(staffId, shifts);
     }
     
     return { lastInsertRowid: staffId };
@@ -137,33 +141,33 @@ export default (db) => ({
   updateStaffWithSkillsAndShifts: (staffId, { name, contractId, skills, shifts }) => {
     // Update basic staff info
     if (name !== undefined || contractId !== undefined) {
-      this.updateStaff(staffId, { name, contractId });
+      model.updateStaff(staffId, { name, contractId });
     }
     
     // Update skills if provided
     if (Array.isArray(skills)) {
-      this.removeAllSkills(staffId);
+      model.removeAllSkills(staffId);
       if (skills.length > 0) {
-        this.assignSkills(staffId, skills);
+        model.assignSkills(staffId, skills);
       }
     }
     
     // Update shifts if provided
     if (Array.isArray(shifts)) {
-      this.removeAllShifts(staffId);
+      model.removeAllShifts(staffId);
       if (shifts.length > 0) {
-        this.assignShifts(staffId, shifts);
+        model.assignShifts(staffId, shifts);
       }
     }
     
     return { changes: 1 };
   },
   getStaffWithSkillsAndShifts: (staffId) => {
-    const staff = this.getStaffById(staffId);
+    const staff = model.getStaffById(staffId);
     if (!staff) return null;
     
-    const skills = this.getStaffSkills(staffId);
-    const shifts = this.getStaffShifts(staffId);
+    const skills = model.getStaffSkills(staffId);
+    const shifts = model.getStaffShifts(staffId);
     
     return {
       ...staff,
@@ -171,4 +175,6 @@ export default (db) => ({
       shifts: shifts.map(s => s.ShiftCode)
     };
   }
-});
+  };
+  return model;
+};

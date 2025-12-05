@@ -158,5 +158,63 @@ export default (app, db, hasActiveLicense) => {
     }
   });
 
+  // Update skill by ID
+  router.put('/skills/:id', (req, res) => {
+    const skillId = req.params.id;
+    const { skillName } = req.body;
+
+    if (!skillName) {
+      return res.status(400).json({
+        status: "error",
+        statusCode: 400,
+        success_message: "",
+        error_message: "skillName is required",
+        payload: {}
+      });
+    }
+
+    try {
+      const existing = skillsModel.getSkillById(skillId);
+      if (!existing) {
+        return res.status(404).json({
+          status: "error",
+          statusCode: 404,
+          success_message: "",
+          error_message: "Skill not found",
+          payload: {}
+        });
+      }
+
+      const duplicate = db.prepare("SELECT 1 FROM Skills WHERE SkillName = ? AND SkillID != ?").get(skillName, skillId);
+      if (duplicate) {
+        return res.status(409).json({
+          status: "error",
+          statusCode: 409,
+          success_message: "",
+          error_message: "Skill name already exists",
+          payload: {}
+        });
+      }
+
+      skillsModel.updateSkill(skillId, { skillName });
+      res.status(200).json({
+        status: "success",
+        statusCode: 200,
+        success_message: "Skill updated successfully",
+        error_message: "",
+        payload: { skillId }
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({
+        status: "error",
+        statusCode: 500,
+        success_message: "",
+        error_message: "Failed to update skill",
+        payload: {}
+      });
+    }
+  });
+
   app.use(router);
 };

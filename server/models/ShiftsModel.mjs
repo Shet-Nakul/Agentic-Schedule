@@ -61,6 +61,10 @@ export default (db) => ({
     );
   },
   deleteShift: (shiftId) => {
+    const row = db.prepare("SELECT ShiftCode FROM Shifts WHERE ShiftID = ?").get(shiftId);
+    if (row && row.ShiftCode) {
+      db.prepare("DELETE FROM StaffShifts WHERE ShiftCode = ?").run(row.ShiftCode);
+    }
     const stmt = db.prepare("DELETE FROM Shifts WHERE ShiftID = ?");
     return stmt.run(shiftId);
   },
@@ -68,6 +72,10 @@ export default (db) => ({
     const stmt = db.prepare("DELETE FROM Shifts WHERE ShiftID = ?");
     let deleted = 0;
     for (const id of shiftIds) {
+      const row = db.prepare("SELECT ShiftCode FROM Shifts WHERE ShiftID = ?").get(id);
+      if (row && row.ShiftCode) {
+        db.prepare("DELETE FROM StaffShifts WHERE ShiftCode = ?").run(row.ShiftCode);
+      }
       const result = stmt.run(id);
       deleted += result.changes;
     }
