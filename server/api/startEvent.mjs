@@ -169,6 +169,8 @@ export default (app, db, hasActiveLicense) => {
           history
         };
 
+        console.log(JSON.stringify(externalApiPayload, null, 2));
+
         // 10. Send to external API
         const externalApiResponse = await fetch('http://127.0.0.1:8000/shift_assignments/', {
           method: 'POST',

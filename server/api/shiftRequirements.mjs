@@ -25,10 +25,15 @@ export default (app, db, hasActiveLicense) => {
 				};
 				break;
 			}
-			try {
-				const result = shiftReqModel.createShiftRequirement({ date, shift, skillId, preferred: preferred ? 1 : 0 });
-				results.push(result.lastInsertRowid);
-			} catch (err) {
+        try {
+            const result = shiftReqModel.createShiftRequirement({
+                date,
+                shift,
+                skillId,
+                preferred: preferred === undefined ? null : Number(preferred)
+            });
+            results.push(result.lastInsertRowid);
+        } catch (err) {
 				console.error(err);
 				hasError = true;
 				errorResponse = {
@@ -135,7 +140,7 @@ export default (app, db, hasActiveLicense) => {
 
 	// Update shift requirement by ID
 	router.put('/shiftrequirements/:id', (req, res) => {
-		const { date, shift, skillId, preferred } = req.body;
+        const { date, shift, skillId, preferred } = req.body;
 
 		if (!date && !shift && !skillId && preferred === undefined) {
 			return res.status(400).json({
@@ -159,12 +164,12 @@ export default (app, db, hasActiveLicense) => {
 				});
 			}
 
-			const result = shiftReqModel.updateShiftRequirement(req.params.id, {
-				date: date !== undefined ? date : existing.Date,
-				shift: shift !== undefined ? shift : existing.Shift,
-				skillId: skillId !== undefined ? skillId : existing.SkillID,
-				preferred: preferred !== undefined ? (preferred ? 1 : 0) : existing.Preferred
-			});
+            const result = shiftReqModel.updateShiftRequirement(req.params.id, {
+                date: date !== undefined ? date : existing.Date,
+                shift: shift !== undefined ? shift : existing.Shift,
+                skillId: skillId !== undefined ? skillId : existing.SkillID,
+                preferred: preferred !== undefined ? Number(preferred) : existing.Preferred
+            });
 
 			if (result.changes === 0) {
 				return res.status(404).json({

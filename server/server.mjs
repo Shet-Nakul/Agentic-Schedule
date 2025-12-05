@@ -9,6 +9,7 @@ import shiftOffRequestsApi from './api/shiftOffRequests.mjs';
 import licensesApi from './api/licenses.mjs';
 import requestTypeApi from './api/requestType.mjs';
 import startEventApi from './api/startEvent.mjs';
+import shiftRequirementsApi from './api/shiftRequirements.mjs';
 import employeeScheduleApi from './api/employeeSchedule.mjs';
 import shiftsApi from './api/shifts.mjs';
 import swaggerUi from 'swagger-ui-express';
@@ -47,6 +48,7 @@ requestTypeApi(app, db, hasValidActiveLicense);
 startEventApi(app, db, hasValidActiveLicense);
 employeeScheduleApi(app, db, hasValidActiveLicense);
 shiftsApi(app, db, hasValidActiveLicense);
+shiftRequirementsApi(app, db, hasValidActiveLicense);
 
 // Start server
 const PORT = 3001;

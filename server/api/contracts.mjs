@@ -115,5 +115,72 @@ export default (app, db, hasActiveLicense) => {
     }
   });
 
+  // Update contract by ID
+  router.put('/contracts/:id', (req, res) => {
+    const contractId = req.params.id;
+    try {
+      const existing = contractsModel.getContractById(contractId);
+      if (!existing) {
+        return res.status(404).json({
+          status: "error",
+          statusCode: 404,
+          success_message: "",
+          error_message: "Contract not found",
+          payload: {}
+        });
+      }
+
+      // Merge existing with provided fields; ignore ContractID changes
+      const updated = {
+        ContractID: existing.ContractID,
+        Description: req.body.Description ?? existing.Description,
+        SingleAssignmentPerDay: req.body.SingleAssignmentPerDay ?? existing.SingleAssignmentPerDay,
+        MaxNumAssignments: req.body.MaxNumAssignments ?? existing.MaxNumAssignments,
+        MinNumAssignments: req.body.MinNumAssignments ?? existing.MinNumAssignments,
+        MaxConsecutiveWorkingDays: req.body.MaxConsecutiveWorkingDays ?? existing.MaxConsecutiveWorkingDays,
+        MinConsecutiveWorkingDays: req.body.MinConsecutiveWorkingDays ?? existing.MinConsecutiveWorkingDays,
+        MaxConsecutiveFreeDays: req.body.MaxConsecutiveFreeDays ?? existing.MaxConsecutiveFreeDays,
+        MinConsecutiveFreeDays: req.body.MinConsecutiveFreeDays ?? existing.MinConsecutiveFreeDays,
+        MaxConsecutiveWorkingWeekends: req.body.MaxConsecutiveWorkingWeekends ?? existing.MaxConsecutiveWorkingWeekends,
+        MinConsecutiveWorkingWeekends: req.body.MinConsecutiveWorkingWeekends ?? existing.MinConsecutiveWorkingWeekends,
+        MaxWorkingWeekendsInFourWeeks: req.body.MaxWorkingWeekendsInFourWeeks ?? existing.MaxWorkingWeekendsInFourWeeks,
+        WeekendDefinition: req.body.WeekendDefinition ?? existing.WeekendDefinition,
+        CompleteWeekends: req.body.CompleteWeekends ?? existing.CompleteWeekends,
+        IdenticalShiftTypesDuringWeekend: req.body.IdenticalShiftTypesDuringWeekend ?? existing.IdenticalShiftTypesDuringWeekend,
+        NoNightShiftBeforeFreeWeekend: req.body.NoNightShiftBeforeFreeWeekend ?? existing.NoNightShiftBeforeFreeWeekend,
+        AlternativeSkillCategory: req.body.AlternativeSkillCategory ?? existing.AlternativeSkillCategory,
+        UnwantedPatterns: req.body.UnwantedPatterns ?? existing.UnwantedPatterns,
+      };
+
+      const result = contractsModel.updateContract(contractId, updated);
+      if (result.changes === 0) {
+        return res.status(404).json({
+          status: "error",
+          statusCode: 404,
+          success_message: "",
+          error_message: "Contract not found or no changes made",
+          payload: {}
+        });
+      }
+
+      res.status(200).json({
+        status: "success",
+        statusCode: 200,
+        success_message: "Contract updated successfully",
+        error_message: "",
+        payload: { contractId }
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({
+        status: "error",
+        statusCode: 500,
+        success_message: "",
+        error_message: "Failed to update contract",
+        payload: {}
+      });
+    }
+  });
+
   app.use(router);
 };
