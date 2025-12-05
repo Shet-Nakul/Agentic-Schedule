@@ -51,6 +51,8 @@ paths:
                     MaxConsecutiveWorkingDays: 5
                     MinConsecutiveWorkingDays: 2
                     MaxConsecutiveFreeDays: 2
+
+  
                     MinConsecutiveFreeDays: 1
                     MaxConsecutiveWorkingWeekends: 1
                     MinConsecutiveWorkingWeekends: 1
