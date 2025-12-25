@@ -78,6 +78,27 @@ http://localhost:3001/api-docs
 - **GET** `/machine-id` → Get unique machine identifier  
 ---
 
+## Socket.io connection snipet
+
+```
+import { io } from "socket.io-client";
+
+// Connect to socket namespace
+const socket = io("http://localhost:3000/eventresults");
+
+// Subscribe to type staff_roster
+socket.emit("subscribe", { type: "staff_roster" });
+
+// Receive results
+socket.on("eventresults", (data) => {
+  console.log("Updated event results:", data);
+});
+
+socket.on("error", (err) => {
+  console.error("Socket error:", err);
+});
+```
+
 ## Notes
 
 Ensure Node.js v18+ is installed.

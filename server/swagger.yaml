@@ -5,6 +5,397 @@ info:
   description: API documentation for Contracts, Staff, Skills, DayOffRequests, and ShiftOffRequests
 
 paths:
+  /startEvent:
+    post:
+      summary: Trigger a scheduling event (staff roster or operational schedule)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eventName:
+                  type: string
+                  description: Name of the event to trigger
+                  enum: [staff roster, operational schedule]
+                horizon:
+                  type: integer
+                  description: Number of days/weeks for the scheduling horizon
+                start_date:
+                  type: string
+                  format: date
+                  description: Start date of the event horizon
+                end_date:
+                  type: string
+                  format: date
+                  description: End date of the event horizon
+              required:
+                - eventName
+                - horizon
+                - start_date
+                - end_date
+            examples:
+              StaffRoster:
+                summary: Staff roster event example
+                value:
+                  eventName: "staff roster"
+                  horizon: 14
+                  start_date: "2025-09-20"
+                  end_date: "2025-10-03"
+              OperationalSchedule:
+                summary: Operational schedule event example
+                value:
+                  eventName: "operational schedule"
+                  horizon: 7
+                  start_date: "2025-09-20"
+                  end_date: "2025-09-27"
+      responses:
+        '200':
+          description: Event triggered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Event 'staff roster' triggered successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      eventName:
+                        type: string
+                        example: staff roster
+                      timestamp:
+                        type: string
+                        format: date-time
+                        example: "2025-09-20T12:34:56.789Z"
+                      eventDetails:
+                        type: object
+                        description: Details of the triggered event
+                        properties:
+                          eventType:
+                            type: string
+                            example: staff_roster
+                          description:
+                            type: string
+                            example: Staff roster generation and management event
+                          action:
+                            type: string
+                            example: generate_roster
+                          dataFetched:
+                            type: object
+                            properties:
+                              skillsData:
+                                type: array
+                                items:
+                                  type: string
+                                example: ["Skill A", "Skill B"]
+                              shiftsData:
+                                type: array
+                                items:
+                                  type: string
+                                example: ["D", "L", "N"]
+                              employees:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    contract_id:
+                                      type: string
+                                    name:
+                                      type: string
+                                    skills:
+                                      type: array
+                                      items:
+                                        type: string
+                              contracts:
+                                type: array
+                                items:
+                                  type: object
+                              dayOffRequests:
+                                type: array
+                                items:
+                                  type: object
+                              shiftOffRequests:
+                                type: array
+                                items:
+                                  type: object
+                              requirements:
+                                type: array
+                                items:
+                                  type: object
+                          externalApiResponse:
+                            type: object
+                            description: Response returned by the external API
+        '400':
+          description: Bad request due to missing or invalid fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error while triggering the event
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /reciveEventResult:
+    post:
+      summary: Receive event result (placeholder endpoint)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: Status of the event result
+                  example: completed
+                message:
+                  type: string
+                  description: Message regarding the event result
+                  example: done
+                payload:
+                  type: object
+                  description: Payload containing event result data
+      responses:
+        '200':
+          description: Event result received
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Event result received
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /licenses:
+    post:
+      summary: Verify license and extract details from uploaded files
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pemFile:
+                  type: string
+                  format: binary
+                  description: PEM public key file
+                licFile:
+                  type: string
+                  format: binary
+                  description: License file (.lic)
+            encoding:
+              pemFile:
+                contentType: application/octet-stream
+              licFile:
+                contentType: application/octet-stream
+      responses:
+        '201':
+          description: License verification result and extracted details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 201
+                  success_message:
+                    type: string
+                    example: License verified
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      start_date:
+                        type: string
+                        example: "01-01-2024"
+                      end_date:
+                        type: string
+                        example: "01-01-2025"
+                      timezone:
+                        type: string
+                        example: "Asia/Kolkata"
+                      status:
+                        type: string
+                        example: "active"
+                      python_output:
+                        type: string
+                        example: "✅ License valid from 01-01-2024 to 01-01-2025 (Asia/Kolkata)"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+    get:
+      summary: Get all licenses
+      responses:
+        '200':
+          description: List of licenses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Licenses fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      licenses:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/License'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+  
+  /licenses/{id}:
+    delete:
+      summary: Delete a license by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the license to delete
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: License deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: License deleted successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    example:
+                      deleted: 1
+        '404':
+          description: License not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
+  /machine-id:
+    get:
+      summary: Get unique machine identifier
+      responses:
+        '200':
+          description: Machine identifier fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  statusCode:
+                    type: integer
+                    example: 200
+                  success_message:
+                    type: string
+                    example: Machine identifier fetched successfully
+                  error_message:
+                    type: string
+                    example: ""
+                  payload:
+                    type: object
+                    properties:
+                      machineId:
+                        type: string
+                        example: "hashedid-00:11:22:33:44:55-Intel(R) CPU"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardErrorResponse'
+
   /contracts:
     post:
       summary: Create one or multiple contracts
@@ -1470,204 +1861,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/StandardErrorResponse'
 
-  /startEvent:
-    post:
-      summary: Trigger a scheduling event (staff roster or operational schedule)
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                eventName:
-                  type: string
-                  description: Name of the event to trigger
-                  enum: [staff roster, operational schedule]
-                horizon:
-                  type: integer
-                  description: Number of days/weeks for the scheduling horizon
-                start_date:
-                  type: string
-                  format: date
-                  description: Start date of the event horizon
-                end_date:
-                  type: string
-                  format: date
-                  description: End date of the event horizon
-              required:
-                - eventName
-                - horizon
-                - start_date
-                - end_date
-            examples:
-              StaffRoster:
-                summary: Staff roster event example
-                value:
-                  eventName: "staff roster"
-                  horizon: 14
-                  start_date: "2025-09-20"
-                  end_date: "2025-10-03"
-              OperationalSchedule:
-                summary: Operational schedule event example
-                value:
-                  eventName: "operational schedule"
-                  horizon: 7
-                  start_date: "2025-09-20"
-                  end_date: "2025-09-27"
-      responses:
-        '200':
-          description: Event triggered successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 200
-                  success_message:
-                    type: string
-                    example: Event 'staff roster' triggered successfully
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-                    properties:
-                      eventName:
-                        type: string
-                        example: staff roster
-                      timestamp:
-                        type: string
-                        format: date-time
-                        example: "2025-09-20T12:34:56.789Z"
-                      eventDetails:
-                        type: object
-                        description: Details of the triggered event
-                        properties:
-                          eventType:
-                            type: string
-                            example: staff_roster
-                          description:
-                            type: string
-                            example: Staff roster generation and management event
-                          action:
-                            type: string
-                            example: generate_roster
-                          dataFetched:
-                            type: object
-                            properties:
-                              skillsData:
-                                type: array
-                                items:
-                                  type: string
-                                example: ["Skill A", "Skill B"]
-                              shiftsData:
-                                type: array
-                                items:
-                                  type: string
-                                example: ["D", "L", "N"]
-                              employees:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                    contract_id:
-                                      type: string
-                                    name:
-                                      type: string
-                                    skills:
-                                      type: array
-                                      items:
-                                        type: string
-                              contracts:
-                                type: array
-                                items:
-                                  type: object
-                              dayOffRequests:
-                                type: array
-                                items:
-                                  type: object
-                              shiftOffRequests:
-                                type: array
-                                items:
-                                  type: object
-                              requirements:
-                                type: array
-                                items:
-                                  type: object
-                          externalApiResponse:
-                            type: object
-                            description: Response returned by the external API
-        '400':
-          description: Bad request due to missing or invalid fields
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-        '500':
-          description: Internal server error while triggering the event
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-
-  /reciveEventResult:
-    post:
-      summary: Receive event result (placeholder endpoint)
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                status:
-                  type: string
-                  description: Status of the event result
-                  example: completed
-                message:
-                  type: string
-                  description: Message regarding the event result
-                  example: done
-                payload:
-                  type: object
-                  description: Payload containing event result data
-      responses:
-        '200':
-          description: Event result received
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 200
-                  success_message:
-                    type: string
-                    example: Event result received
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-
   /employeeSchedule:
     post:
       summary: Create one or multiple employee schedules
@@ -1946,200 +2139,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EmployeeScheduleListResponse'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-
-
-  /licenses:
-    post:
-      summary: Verify license and extract details from uploaded files
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                pemFile:
-                  type: string
-                  format: binary
-                  description: PEM public key file
-                licFile:
-                  type: string
-                  format: binary
-                  description: License file (.lic)
-            encoding:
-              pemFile:
-                contentType: application/octet-stream
-              licFile:
-                contentType: application/octet-stream
-      responses:
-        '201':
-          description: License verification result and extracted details
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 201
-                  success_message:
-                    type: string
-                    example: License verified
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-                    properties:
-                      start_date:
-                        type: string
-                        example: "01-01-2024"
-                      end_date:
-                        type: string
-                        example: "01-01-2025"
-                      timezone:
-                        type: string
-                        example: "Asia/Kolkata"
-                      status:
-                        type: string
-                        example: "active"
-                      python_output:
-                        type: string
-                        example: "✅ License valid from 01-01-2024 to 01-01-2025 (Asia/Kolkata)"
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-    get:
-      summary: Get all licenses
-      responses:
-        '200':
-          description: List of licenses
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 200
-                  success_message:
-                    type: string
-                    example: Licenses fetched successfully
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-                    properties:
-                      licenses:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/License'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-  
-  /licenses/{id}:
-    delete:
-      summary: Delete a license by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: The ID of the license to delete
-          schema:
-            type: integer
-            example: 1
-      responses:
-        '200':
-          description: License deleted successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 200
-                  success_message:
-                    type: string
-                    example: License deleted successfully
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-                    example:
-                      deleted: 1
-        '404':
-          description: License not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandardErrorResponse'
-
-  /machine-id:
-    get:
-      summary: Get unique machine identifier
-      responses:
-        '200':
-          description: Machine identifier fetched successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  statusCode:
-                    type: integer
-                    example: 200
-                  success_message:
-                    type: string
-                    example: Machine identifier fetched successfully
-                  error_message:
-                    type: string
-                    example: ""
-                  payload:
-                    type: object
-                    properties:
-                      machineId:
-                        type: string
-                        example: "hashedid-00:11:22:33:44:55-Intel(R) CPU"
         '500':
           description: Internal server error
           content:

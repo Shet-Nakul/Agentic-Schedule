@@ -1,6 +1,10 @@
 import express from 'express';
 import cors from 'cors';
+import http from 'http';
+import { Server } from 'socket.io';
+
 import db from './db/db.mjs';
+
 import staffApi from './api/staff.mjs';
 import contractsApi from './api/contracts.mjs';
 import skillsApi from './api/skills.mjs';
@@ -12,33 +16,45 @@ import startEventApi from './api/startEvent.mjs';
 import shiftRequirementsApi from './api/shiftRequirements.mjs';
 import employeeScheduleApi from './api/employeeSchedule.mjs';
 import shiftsApi from './api/shifts.mjs';
+
+import registerEventSocket from './sockets/eventresults.socket.mjs';
+
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// --------------------------------------------------
+// File path utilities
+// --------------------------------------------------
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 
-// Create Express app
+// --------------------------------------------------
+// EXPRESS APP
+// --------------------------------------------------
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Serve Swagger UI at /api-docs
+// Swagger Docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Simple health check route
+// Health check
 app.get('/', (req, res) => {
-  res.send('✅ Server is running and DB is connected!');
+  res.send('Server is running and DB is connected!');
 });
 
-// Initialize licenses API first so we can access the helper
+// --------------------------------------------------
+// LICENSE API (must load first to get helper)
+// --------------------------------------------------
 const licenses = licensesApi(app, db);
 const { hasValidActiveLicense } = licenses;
 
-// Initialize other APIs
+// --------------------------------------------------
+// Load all REST APIs
+// --------------------------------------------------
 staffApi(app, db, hasValidActiveLicense);
 contractsApi(app, db, hasValidActiveLicense);
 skillsApi(app, db, hasValidActiveLicense);
@@ -50,8 +66,25 @@ employeeScheduleApi(app, db, hasValidActiveLicense);
 shiftsApi(app, db, hasValidActiveLicense);
 shiftRequirementsApi(app, db, hasValidActiveLicense);
 
-// Start server
+
+// --------------------------------------------------
+// SOCKET.IO SERVER
+// --------------------------------------------------
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "*"
+  }
+});
+
+// Attach eventresults socket namespace
+registerEventSocket(io, db);
+
+// --------------------------------------------------
+// START SERVER
+// --------------------------------------------------
 const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+
+server.listen(PORT, () => {
+  console.log(`Server + Socket running at http://localhost:${PORT}`);
 });

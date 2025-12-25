@@ -205,6 +205,7 @@ export default (app, db, hasActiveLicense) => {
         error_message: "",
         payload: { eventName, timestamp: new Date().toISOString(), eventDetails: eventResult }
       });
+      eventResultModel.createEventResult({ eventType: 'staff_roster', message: "In progress", eventData: "" });
 
     } catch (err) {
       console.error(err);
