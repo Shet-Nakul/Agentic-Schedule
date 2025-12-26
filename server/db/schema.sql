@@ -82,7 +82,7 @@ CREATE TABLE ShiftOffRequests (
 
 CREATE TABLE ShiftRequirements (
     RequirementID INTEGER PRIMARY KEY AUTOINCREMENT,
-    Date DATE NOT NULL,
+    DayOfWeek VARCHAR(20) NOT NULL,
     Shift VARCHAR(10) NOT NULL,
     SkillID INTEGER NOT NULL,
     Preferred INTEGER DEFAULT 0,

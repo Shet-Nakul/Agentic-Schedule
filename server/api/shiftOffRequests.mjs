@@ -14,13 +14,55 @@ export default (app, db, hasActiveLicense) => {
 
     for (const reqObj of requests) {
       const { employeeId, requestDate, requestTypeId, shift } = reqObj;
-      if (!employeeId || !requestDate || !requestTypeId || !shift) {
+      if (
+        employeeId === undefined || employeeId === null ||
+        requestDate === undefined || requestDate === null ||
+        requestTypeId === undefined || requestTypeId === null ||
+        shift === undefined || shift === null
+      ) {
         hasError = true;
         errorResponse = {
           status: "error",
           statusCode: 400,
           success_message: "",
           error_message: "employeeId, requestDate, requestTypeId, and shift are required for each request",
+          payload: {}
+        };
+        break;
+      }
+      // Foreign key existence checks
+      const staffExists = db.prepare("SELECT 1 FROM Staff WHERE StaffID = ?").get(employeeId);
+      if (!staffExists) {
+        hasError = true;
+        errorResponse = {
+          status: "error",
+          statusCode: 400,
+          success_message: "",
+          error_message: `Staff with ID ${employeeId} does not exist`,
+          payload: {}
+        };
+        break;
+      }
+      const reqTypeExists = db.prepare("SELECT 1 FROM RequestType WHERE RequestTypeID = ?").get(requestTypeId);
+      if (!reqTypeExists) {
+        hasError = true;
+        errorResponse = {
+          status: "error",
+          statusCode: 400,
+          success_message: "",
+          error_message: `RequestType with ID ${requestTypeId} does not exist`,
+          payload: {}
+        };
+        break;
+      }
+      const shiftExists = db.prepare("SELECT 1 FROM Shifts WHERE ShiftCode = ?").get(shift);
+      if (!shiftExists) {
+        hasError = true;
+        errorResponse = {
+          status: "error",
+          statusCode: 400,
+          success_message: "",
+          error_message: `ShiftCode '${shift}' does not exist`,
           payload: {}
         };
         break;

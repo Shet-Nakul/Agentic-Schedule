@@ -8,9 +8,14 @@ concurrently([
     prefixColor: 'blue'
   },
   {
-    command: 'cd server && node index.js',
+    command: 'cd server && node server.mjs',
     name: 'SERVER',
     prefixColor: 'green'
+  },
+  {
+    command: 'cd Solver && uvicorn services.app:app --host 0.0.0.0 --port 8000',
+    name: 'SOLVER',
+    prefixColor: 'magenta'
   },
   {
     command: 'electron electron/main.js',
@@ -19,9 +24,9 @@ concurrently([
   }
 ], {
   prefix: 'name',
-  killOthers: ['failure', 'success'],
+  killOthersOn: ['failure', 'success'],
   restartTries: 3
-}).then(
+}).result.then(
   () => console.log('All processes exited successfully'),
   (err) => console.error('Error occurred:', err)
 );

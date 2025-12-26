@@ -5,6 +5,31 @@ export default (app, db, hasActiveLicense) => {
   const router = Router();
   const staffModel = StaffModel(db);
 
+  const resolveSkillIds = (skills) => {
+    const ids = [];
+    for (const s of skills) {
+      if (s === null || s === undefined) continue;
+      if (typeof s === 'number') {
+        const skillExists = db.prepare("SELECT SkillID FROM Skills WHERE SkillID = ?").get(s);
+        if (!skillExists) {
+          throw new Error(`SkillID ${s} does not exist`);
+        }
+        ids.push(s);
+      } else if (typeof s === 'string') {
+        const name = s.trim();
+        if (!name) continue;
+        const row = db.prepare("SELECT SkillID FROM Skills WHERE SkillName = ?").get(name);
+        if (row && row.SkillID) {
+          ids.push(row.SkillID);
+        } else {
+          const ins = db.prepare("INSERT INTO Skills (SkillName) VALUES (?)").run(name);
+          ids.push(Number(ins.lastInsertRowid));
+        }
+      }
+    }
+    return ids;
+  };
+
   /**
    * CREATE Staff (single or multiple) and assign shifts
    * Body example:
@@ -50,26 +75,25 @@ export default (app, db, hasActiveLicense) => {
         break;
       }
 
-      // Validate skills if provided
-      if (Array.isArray(staff.skills)) {
-        for (const skillId of staff.skills) {
-          const skillExists = db.prepare("SELECT 1 FROM Skills WHERE SkillID = ?").get(skillId);
-          if (!skillExists) {
-            hasError = true;
-            errorResponse = {
-              status: "error",
-              statusCode: 400,
-              success_message: "",
-              error_message: `SkillID ${skillId} does not exist`,
-              payload: {}
-            };
-            break;
-          }
+      
+      let skillIds = [];
+      try {
+        if (Array.isArray(staff.skills)) {
+          skillIds = resolveSkillIds(staff.skills);
         }
-        if (hasError) break;
+      } catch (e) {
+        hasError = true;
+        errorResponse = {
+          status: "error",
+          statusCode: 400,
+          success_message: "",
+          error_message: e.message || 'Invalid skills specified',
+          payload: {}
+        };
+        break;
       }
 
-      // Validate shifts if provided
+      
       if (Array.isArray(staff.shifts)) {
         for (const shiftCode of staff.shifts) {
           const shiftExists = db.prepare("SELECT 1 FROM Shifts WHERE ShiftCode = ?").get(shiftCode);
@@ -89,11 +113,11 @@ export default (app, db, hasActiveLicense) => {
       }
 
       try {
-        // Use model to create staff with skills and shifts
+        
         const result = staffModel.createStaffWithSkillsAndShifts({
           name: staff.name,
           contractId: staff.contractId,
-          skills: staff.skills || [],
+          skills: skillIds,
           shifts: staff.shifts || []
         });
         results.push(result.lastInsertRowid);
@@ -150,7 +174,7 @@ export default (app, db, hasActiveLicense) => {
         });
       }
 
-      // Validate contract if provided
+      
       if (contractId) {
         const contractExists = db.prepare("SELECT 1 FROM ContractsDetails WHERE ContractID = ?").get(contractId);
         if (!contractExists) {
@@ -164,23 +188,23 @@ export default (app, db, hasActiveLicense) => {
         }
       }
 
-      // Validate skills if provided
+      
+      let skillIds;
       if (Array.isArray(skills)) {
-        for (const skillId of skills) {
-          const skillExists = db.prepare("SELECT 1 FROM Skills WHERE SkillID = ?").get(skillId);
-          if (!skillExists) {
-            return res.status(400).json({
-              status: "error",
-              statusCode: 400,
-              success_message: "",
-              error_message: `SkillID ${skillId} does not exist`,
-              payload: {}
-            });
-          }
+        try {
+          skillIds = resolveSkillIds(skills);
+        } catch (e) {
+          return res.status(400).json({
+            status: "error",
+            statusCode: 400,
+            success_message: "",
+            error_message: e.message || 'Invalid skills specified',
+            payload: {}
+          });
         }
       }
 
-      // Validate shifts if provided
+      
       if (Array.isArray(shifts)) {
         for (const shiftCode of shifts) {
           const shiftExists = db.prepare("SELECT 1 FROM Shifts WHERE ShiftCode = ?").get(shiftCode);
@@ -196,8 +220,8 @@ export default (app, db, hasActiveLicense) => {
         }
       }
 
-      // Use model to update staff with skills and shifts
-      staffModel.updateStaffWithSkillsAndShifts(staffId, { name, contractId, skills, shifts });
+      
+      staffModel.updateStaffWithSkillsAndShifts(staffId, { name, contractId, skills: skillIds, shifts });
 
       res.status(200).json({
         status: "success",

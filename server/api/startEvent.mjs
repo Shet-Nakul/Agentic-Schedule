@@ -130,14 +130,39 @@ export default (app, db, hasActiveLicense) => {
           weight: r.weight.toString()
         }));
 
-        // 7. Fetch requirements
-        const requirements = db.prepare(`
-          SELECT Date AS date, Shift AS shift, s.SkillName AS skill, Preferred AS preferred
+        // 7. Fetch requirements (Generated from Weekly Requirements)
+        // Fetch all generic weekly requirements
+        const weeklyRequirements = db.prepare(`
+          SELECT DayOfWeek, Shift AS shift, s.SkillName AS skill, Preferred AS preferred
           FROM ShiftRequirements r
           JOIN Skills s ON r.SkillID = s.SkillID
-          WHERE Date BETWEEN ? AND ?
-          ORDER BY Date, Shift
-        `).all(start_date, end_date);
+        `).all();
+
+        const requirements = [];
+        let currentDate = new Date(start_date);
+        const lastDate = new Date(end_date);
+        const dayMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        // Iterate through each day in the range and apply weekly requirements
+        while (currentDate <= lastDate) {
+            const dateStr = currentDate.toISOString().split('T')[0];
+            const dayIndex = currentDate.getUTCDay();
+            const dayName = dayMap[dayIndex];
+
+            const daysReqs = weeklyRequirements.filter(r => r.DayOfWeek === dayName);
+            
+            for (const req of daysReqs) {
+                requirements.push({
+                    date: dateStr,
+                    shift: req.shift,
+                    skill: req.skill,
+                    preferred: req.preferred
+                });
+            }
+
+            // Move to next day
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
 
         // 8. Fetch employee schedule history
         const employeeScheduleRows = db.prepare(`

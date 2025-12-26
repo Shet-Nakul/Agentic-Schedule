@@ -12,9 +12,21 @@ function createWindow() {
 
   // In development, load from React dev server
   // In production, load from built files
-  win.loadURL(process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
-    : `file://${path.join(__dirname, '../frontend/dist/index.html')}`);
+  const devUrl = 'http://localhost:3000';
+  const prodUrl = `file://${path.join(__dirname, '../frontend/dist/index.html')}`;
+  const isDev = !app.isPackaged;
+
+  if (isDev) {
+    const loadUrlWithRetry = (url) => {
+      win.loadURL(url).catch((e) => {
+        console.log('Error loading URL, retrying in 1s...', e);
+        setTimeout(() => loadUrlWithRetry(url), 1000);
+      });
+    };
+    loadUrlWithRetry(devUrl);
+  } else {
+    win.loadURL(prodUrl);
+  }
 }
 
 app.whenReady().then(() => {
