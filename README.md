@@ -84,7 +84,7 @@ http://localhost:3001/api-docs
 import { io } from "socket.io-client";
 
 // Connect to socket namespace
-const socket = io("http://localhost:3000/eventresults");
+const socket = io("http://localhost:3001/eventresults");
 
 // Subscribe to type staff_roster
 socket.emit("subscribe", { type: "staff_roster" });
@@ -98,8 +98,3 @@ socket.on("error", (err) => {
   console.error("Socket error:", err);
 });
 ```
-
-## Notes
-
-Ensure Node.js v18+ is installed.
-The local SQLite database is stored at ./server/db/localdb.sqlite. Make sure it is writable by the server process.

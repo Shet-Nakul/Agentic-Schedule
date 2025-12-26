@@ -12,7 +12,7 @@ function createWindow() {
 
   // In development, load from React dev server
   // In production, load from built files
-  const devUrl = 'http://localhost:3000';
+  const devUrl = 'http://localhost:3002';
   const prodUrl = `file://${path.join(__dirname, '../frontend/dist/index.html')}`;
   const isDev = !app.isPackaged;
 
