@@ -10,7 +10,7 @@
  */
 
 class EventResultsClient {
-  constructor(serverUrl = 'http://localhost:3000') {
+  constructor(serverUrl = 'http://localhost:3001') {
     this.serverUrl = serverUrl;
     this.socket = null;
     this.currentRoom = null;
@@ -187,7 +187,7 @@ class EventResultsClient {
 // ============================================
 
 // Initialize the client
-const eventClient = new EventResultsClient('http://localhost:3000');
+const eventClient = new EventResultsClient('http://localhost:3001');
 
 // Connect to the socket
 eventClient.connect()

@@ -1,0 +1,6483 @@
+[
+    {
+      "date": "2025-10-01",
+      "employee_id": 0,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 1,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 2,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 3,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 4,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 5,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 8,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 10,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 11,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 12,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 13,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 14,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 15,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 16,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 17,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 18,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 19,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 20,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 21,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 22,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 24,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 25,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 26,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 27,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 28,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 29,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 30,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 32,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 33,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 34,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-01",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 0,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 1,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 2,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 3,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 4,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 5,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 6,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 7,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 11,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 12,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 14,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 15,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 16,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 17,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 18,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 19,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 20,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 22,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 23,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 24,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 25,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 26,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 27,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 29,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 32,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 34,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-02",
+      "employee_id": 35,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 0,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 2,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 3,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 4,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 5,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 6,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 7,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 8,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 9,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 11,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 12,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 14,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 15,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 16,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 17,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 18,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 19,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 20,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 22,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 23,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 26,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 27,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 29,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 30,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 31,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 33,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-03",
+      "employee_id": 35,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 0,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 2,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 3,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 4,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 5,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 6,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 7,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 9,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 10,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 11,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 12,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 13,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 15,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 16,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 17,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 18,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 19,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 20,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 22,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 24,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 25,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 26,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 27,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 28,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 30,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 32,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 34,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-04",
+      "employee_id": 35,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 0,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 1,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 2,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 3,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 5,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 6,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 8,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 10,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 11,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 12,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 13,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 14,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 15,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 16,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 17,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 18,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 19,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 20,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 21,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 22,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 25,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 26,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 27,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 29,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 30,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 31,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 32,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 33,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-05",
+      "employee_id": 35,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 0,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 1,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 2,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 3,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 5,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 6,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 7,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 9,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 10,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 11,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 12,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 15,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 16,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 17,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 18,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 19,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 20,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 21,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 22,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 23,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 25,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 26,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 27,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 28,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 30,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 33,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 34,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-06",
+      "employee_id": 35,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 0,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 2,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 3,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 5,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 6,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 7,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 8,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 9,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 10,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 11,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 14,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 15,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 16,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 17,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 18,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 19,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 20,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 21,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 22,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 23,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 24,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 26,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 27,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 28,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 29,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 30,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 32,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 33,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-07",
+      "employee_id": 35,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 0,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 2,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 3,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 4,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 5,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 7,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 8,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 9,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 10,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 11,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 12,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 14,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 15,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 16,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 17,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 18,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 19,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 20,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 22,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 23,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 24,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 26,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 27,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 30,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 31,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 32,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 33,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-08",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 0,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 1,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 2,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 3,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 4,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 5,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 6,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 7,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 8,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 9,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 11,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 12,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 13,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 15,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 16,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 17,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 18,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 19,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 20,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 21,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 22,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 23,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 25,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 26,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 27,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 29,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 30,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 33,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 34,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-09",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 0,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 1,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 2,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 3,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 4,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 5,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 6,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 7,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 8,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 9,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 10,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 11,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 12,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 15,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 16,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 17,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 18,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 19,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 20,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 21,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 22,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 23,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 24,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 25,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 26,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 27,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 28,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 30,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 32,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 33,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-10",
+      "employee_id": 35,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 0,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 1,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 2,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 3,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 4,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 5,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 7,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 9,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 10,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 11,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 12,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 13,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 15,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 16,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 17,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 18,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 19,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 20,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 22,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 23,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 24,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 25,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 26,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 27,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 28,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 29,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 32,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 33,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 34,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-11",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 0,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 1,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 2,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 3,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 4,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 5,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 6,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 7,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 8,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 9,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 10,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 11,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 12,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 13,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 14,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 15,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 16,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 17,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 18,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 19,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 20,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 21,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 22,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 23,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 25,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 26,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 27,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 28,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 30,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 32,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 33,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 34,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-12",
+      "employee_id": 35,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 0,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 1,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 2,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 3,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 4,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 5,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 6,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 8,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 9,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 10,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 11,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 12,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 14,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 15,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 16,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 17,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 18,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 19,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 20,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 21,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 22,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 23,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 24,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 25,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 26,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 27,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 28,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 30,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 32,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 34,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-13",
+      "employee_id": 35,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 0,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 1,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 2,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 3,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 4,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 5,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 6,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 7,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 8,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 11,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 14,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 15,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 16,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 17,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 18,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 19,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 20,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 21,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 22,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 23,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 26,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 27,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 28,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 29,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 30,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 32,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 33,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 34,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-14",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 0,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 1,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 2,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 3,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 5,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 6,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 7,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 8,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 9,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 10,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 11,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 12,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 13,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 14,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 15,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 16,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 17,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 18,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 19,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 20,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 21,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 22,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 23,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 24,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 26,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 27,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 30,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 31,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 32,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 33,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 34,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-15",
+      "employee_id": 35,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 0,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 1,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 2,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 3,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 4,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 5,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 6,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 7,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 10,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 11,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 12,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 13,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 14,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 15,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 16,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 17,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 18,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 19,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 20,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 21,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 22,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 23,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 25,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 26,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 27,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 28,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 30,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 32,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 34,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-16",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 0,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 2,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 3,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 5,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 6,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 7,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 9,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 10,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 11,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 12,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 15,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 16,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 17,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 18,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 19,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 20,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 22,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 24,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 25,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 26,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 27,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 30,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 32,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 33,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 34,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-17",
+      "employee_id": 35,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 0,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 1,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 2,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 3,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 5,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 8,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 9,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 10,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 11,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 12,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 13,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 14,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 15,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 16,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 17,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 18,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 19,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 20,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 21,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 22,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 23,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 24,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 26,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 27,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 28,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 32,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 33,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 34,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-18",
+      "employee_id": 35,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 0,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 1,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 2,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 3,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 5,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 6,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 8,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 9,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 11,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 15,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 16,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 17,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 18,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 19,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 20,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 21,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 22,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 24,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 25,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 26,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 27,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 28,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 29,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 32,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 33,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 34,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-19",
+      "employee_id": 35,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 0,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 1,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 2,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 3,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 5,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 7,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 8,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 9,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 11,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 12,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 14,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 15,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 16,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 17,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 18,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 19,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 20,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 22,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 23,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 24,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 25,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 26,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 27,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 31,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 33,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-20",
+      "employee_id": 35,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 0,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 2,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 3,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 4,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 5,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 6,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 8,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 9,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 10,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 11,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 14,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 15,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 16,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 17,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 18,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 19,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 20,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 22,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 24,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 25,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 26,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 27,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 29,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-21",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 0,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 2,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 3,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 4,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 5,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 7,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 9,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 11,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 13,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 14,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 15,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 16,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 17,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 18,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 19,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 20,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 21,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 22,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 23,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 24,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 25,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 26,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 27,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 30,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 31,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-22",
+      "employee_id": 35,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 0,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 1,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 2,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 3,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 4,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 5,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 6,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 7,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 8,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 9,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 10,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 11,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 12,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 13,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 14,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 15,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 16,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 17,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 18,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 19,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 20,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 21,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 22,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 24,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 25,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 26,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 27,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 28,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 29,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 30,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 33,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 34,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-23",
+      "employee_id": 35,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 0,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 1,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 2,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 3,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 4,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 5,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 6,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 8,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 9,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 11,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 12,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 14,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 15,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 16,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 17,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 18,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 19,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 20,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 21,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 22,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 23,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 24,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 25,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 26,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 27,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 28,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 30,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 32,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 34,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-24",
+      "employee_id": 35,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 0,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 1,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 2,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 3,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 4,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 5,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 6,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 7,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 8,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 9,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 11,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 12,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 14,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 15,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 16,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 17,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 18,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 19,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 20,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 21,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 22,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 23,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 24,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 25,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 26,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 27,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 28,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 29,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 32,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 33,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 34,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-25",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 0,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 2,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 3,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 4,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 5,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 6,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 7,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 10,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 11,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 13,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 14,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 15,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 16,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 17,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 18,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 19,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 20,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 21,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 22,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 23,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 24,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 26,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 27,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 28,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 29,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 30,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 31,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 32,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 33,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 34,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-26",
+      "employee_id": 35,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 0,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 1,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 2,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 3,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 4,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 5,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 7,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 8,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 9,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 10,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 11,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 13,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 14,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 15,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 16,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 17,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 18,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 19,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 20,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 21,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 22,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 23,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 24,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 25,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 26,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 27,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 28,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 30,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 31,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 32,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 33,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 34,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-27",
+      "employee_id": 35,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 0,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 1,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 2,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 3,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 4,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 5,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 6,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 7,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 8,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 10,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 11,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 12,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 13,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 14,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 15,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 16,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 17,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 18,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 19,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 20,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 21,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 22,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 23,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 24,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 25,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 26,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 27,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 28,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 30,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 32,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 33,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-28",
+      "employee_id": 35,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 0,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 1,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 2,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 3,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 4,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 5,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 6,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 7,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 8,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 9,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 10,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 11,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 12,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 13,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 14,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 15,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 16,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 17,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 18,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 19,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 20,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 21,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 22,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 23,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 24,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 25,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 26,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 27,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 28,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 29,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 30,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 32,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 33,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 34,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-29",
+      "employee_id": 35,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 0,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 1,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 2,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 3,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 4,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 5,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 6,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 7,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 8,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 9,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 10,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 11,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 12,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 13,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 14,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 15,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 16,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 17,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 18,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 19,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 20,
+      "shift": "D",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 21,
+      "shift": "L",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 22,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 23,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 24,
+      "shift": "N",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 25,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 26,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 27,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 28,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 29,
+      "shift": "E",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 30,
+      "shift": null,
+      "working": false
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 31,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 32,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 33,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 34,
+      "shift": "DH",
+      "working": true
+    },
+    {
+      "date": "2025-10-30",
+      "employee_id": 35,
+      "shift": "L",
+      "working": true
+    }
+  ]
+  

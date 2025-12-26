@@ -11,7 +11,7 @@ import useEventResults from '../hooks/useEventResults';
  * - Switch between different event types
  * - Leave rooms
  */
-const EventResultsViewer = ({ serverUrl = 'http://localhost:3000' }) => {
+const EventResultsViewer = ({ serverUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001' }) => {
   const [selectedEventType, setSelectedEventType] = useState('SCHEDULE_UPDATE');
   const [eventTypeInput, setEventTypeInput] = useState('');
 

@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 
 /**
  * Hook to connect to the event results socket and join rooms by eventType
- * @param {string} serverUrl - The server URL (e.g., 'http://localhost:3000')
+ * @param {string} serverUrl - The server URL (e.g., 'http://localhost:3001')
  * @param {string} eventType - The event type to subscribe to (e.g., 'SCHEDULE_UPDATE')
  * @returns {Object} { eventResults, isConnected, error, joinRoom, leaveRoom }
  */
