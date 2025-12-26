@@ -1,5 +1,5 @@
 export default (db) => ({
-	createShiftRequirement: ({ date, shift, skillId, preferred }) => {
+	createShiftRequirement: ({ dayOfWeek, shift, skillId, preferred }) => {
 		const safe = (v) => {
 			if (
 				v === undefined ||
@@ -16,9 +16,9 @@ export default (db) => ({
 			return null;
 		};
 		const stmt = db.prepare(
-			"INSERT INTO ShiftRequirements (Date, Shift, SkillID, Preferred) VALUES (?, ?, ?, ?)"
+			"INSERT INTO ShiftRequirements (DayOfWeek, Shift, SkillID, Preferred) VALUES (?, ?, ?, ?)"
 		);
-		return stmt.run(safe(date), safe(shift), safe(skillId), safe(preferred));
+		return stmt.run(safe(dayOfWeek), safe(shift), safe(skillId), safe(preferred));
 	},
 
 	getAllShiftRequirements: () => {
@@ -29,11 +29,11 @@ export default (db) => ({
 		return db.prepare("SELECT * FROM ShiftRequirements WHERE RequirementID = ?").get(id);
 	},
 
-	getShiftRequirementsByDate: (date) => {
-		return db.prepare("SELECT * FROM ShiftRequirements WHERE Date = ?").all(date);
+	getShiftRequirementsByDay: (dayOfWeek) => {
+		return db.prepare("SELECT * FROM ShiftRequirements WHERE DayOfWeek = ?").all(dayOfWeek);
 	},
 
-	updateShiftRequirement: (id, { date, shift, skillId, preferred }) => {
+	updateShiftRequirement: (id, { dayOfWeek, shift, skillId, preferred }) => {
 		const safe = (v) => {
 			if (
 				v === undefined ||
@@ -50,9 +50,9 @@ export default (db) => ({
 			return null;
 		};
 		const stmt = db.prepare(
-			"UPDATE ShiftRequirements SET Date = ?, Shift = ?, SkillID = ?, Preferred = ? WHERE RequirementID = ?"
+			"UPDATE ShiftRequirements SET DayOfWeek = ?, Shift = ?, SkillID = ?, Preferred = ? WHERE RequirementID = ?"
 		);
-		return stmt.run(safe(date), safe(shift), safe(skillId), safe(preferred), id);
+		return stmt.run(safe(dayOfWeek), safe(shift), safe(skillId), safe(preferred), id);
 	},
 
 	deleteShiftRequirement: (id) => {
@@ -70,4 +70,3 @@ export default (db) => ({
 		return { changes: deleted };
 	}
 });
-
