@@ -3,7 +3,7 @@ import SkillsModel from '../models/SkillsModel.mjs';
 import EventResultModel from '../models/EventResultModel.mjs';
 import fetch from 'node-fetch'; // Ensure node-fetch installed for external API
 
-export default (app, db, hasActiveLicense) => {
+export default (app, db, hasActiveLicense, io) => {
   const router = Router();
   const skillsModel = SkillsModel(db);
   const eventResultModel = EventResultModel(db);
@@ -253,6 +253,18 @@ export default (app, db, hasActiveLicense) => {
       // store message -> Message column, payload -> EventData (stringify if object)
       const eventDataStr = typeof payload === 'string' ? payload : JSON.stringify(payload || {});
       eventResultModel.createEventResult({ eventType: 'staff_roster', message: message, eventData: eventDataStr });
+
+      // Emit socket event to notify frontend
+      if (io) {
+        const rows = eventResultModel.getEventResultsByType('staff_roster');
+        io.of("/eventresults").to("eventType:staff_roster").emit("eventresults", { 
+          eventType: 'staff_roster', 
+          data: rows,
+          timestamp: new Date().toISOString()
+        });
+        console.log("Emitted eventresults to room eventType:staff_roster");
+      }
+
     } catch (err) {
       console.error('Failed to save event result:', err);
     }

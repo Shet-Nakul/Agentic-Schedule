@@ -12,7 +12,7 @@ import useEventResults from '../hooks/useEventResults';
  * - Leave rooms
  */
 const EventResultsViewer = ({ serverUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001' }) => {
-  const [selectedEventType, setSelectedEventType] = useState('SCHEDULE_UPDATE');
+  const [selectedEventType, setSelectedEventType] = useState('staff_roster');
   const [eventTypeInput, setEventTypeInput] = useState('');
 
   // Initialize socket connection with the selected event type

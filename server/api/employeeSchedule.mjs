@@ -14,7 +14,7 @@ export default (app, db, hasActiveLicense) => {
     let errorResponse = null;
   
     // Generate one UUID per request
-    const batchId = uuidv4();
+    // const batchId = uuidv4(); // REMOVED: Must be unique per row
   
     for (const schedule of schedules) {
       if (!schedule.date || schedule.employee_id === undefined) {
@@ -44,9 +44,10 @@ export default (app, db, hasActiveLicense) => {
       }
   
       try {
-        // Save schedule with shared batchId
+        const rowId = uuidv4(); // Unique ID for each schedule row
+        // Save schedule
         employeeScheduleModel.createEmployeeSchedule({
-          scheduleId: batchId, // same for all in this request
+          scheduleId: rowId, 
           date: schedule.date,
           employeeId: schedule.employee_id,
           shift: schedule.shift || null,
@@ -77,7 +78,7 @@ export default (app, db, hasActiveLicense) => {
       statusCode: 201,
       success_message: "Employee schedules created successfully",
       error_message: "",
-      payload: { batchId, employeeIds: results }
+      payload: { employeeIds: results }
     });
   });
   

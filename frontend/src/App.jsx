@@ -22,13 +22,15 @@ import {
   TableChart as DataViewerIcon,
   Upload as ImportIcon,
   Menu as MenuIcon,
-  CalendarMonth as CalendarIcon
+  CalendarMonth as CalendarIcon,
+  MonitorHeart as MonitorIcon
 } from '@mui/icons-material';
 import ExcelUploader from './components/ExcelUploader';
 import DataViewer from './components/DataViewer';
 import Dashboard from './components/Dashboard';
 import Scheduler from './components/Scheduler';
 import ScheduleView from './components/ScheduleView';
+import EventResultsViewer from './components/EventResultsViewer';
 
 const drawerWidth = 240;
 
@@ -210,6 +212,7 @@ function App() {
     { text: 'Schedule View', icon: <CalendarIcon />, value: 'schedule' },
     { text: 'Data Viewer', icon: <DataViewerIcon />, value: 'viewer' },
     { text: 'Import', icon: <ImportIcon />, value: 'import' },
+    { text: 'Event Monitor', icon: <MonitorIcon />, value: 'events' },
   ];
 
   const drawer = (
@@ -293,6 +296,8 @@ function App() {
         return <DataViewer />;
       case 'import':
         return <ExcelUploader />;
+      case 'events':
+        return <EventResultsViewer />;
       default:
         return <Dashboard />;
     }

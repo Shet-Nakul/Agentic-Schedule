@@ -61,7 +61,7 @@ skillsApi(app, db, hasValidActiveLicense);
 dayOffRequestsApi(app, db, hasValidActiveLicense);
 shiftOffRequestsApi(app, db, hasValidActiveLicense);
 requestTypeApi(app, db, hasValidActiveLicense);
-startEventApi(app, db, hasValidActiveLicense);
+// startEventApi moved below to access io
 employeeScheduleApi(app, db, hasValidActiveLicense);
 shiftsApi(app, db, hasValidActiveLicense);
 shiftRequirementsApi(app, db, hasValidActiveLicense);
@@ -76,6 +76,9 @@ const io = new Server(server, {
     origin: "*"
   }
 });
+
+// Initialize startEventApi with io
+startEventApi(app, db, hasValidActiveLicense, io);
 
 // Attach eventresults socket namespace
 registerEventSocket(io, db);

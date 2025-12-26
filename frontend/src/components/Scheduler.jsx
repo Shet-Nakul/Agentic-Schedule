@@ -41,6 +41,8 @@ import ConfirmDialog from './ConfirmDialog';
 import FeedbackDialog from './FeedbackDialog';
 import ExcelUploader from './ExcelUploader';
 import { Add as AddIcon, TableChart as TableChartIcon } from '@mui/icons-material';
+import useEventResults from '../hooks/useEventResults';
+import SchedulePreview from './SchedulePreview';
 
  
 
@@ -52,9 +54,11 @@ const Scheduler = () => {
   const [success, setSuccess] = useState(null);
   const [horizon, setHorizon] = useState(28);
   const [generatedAssignments, setGeneratedAssignments] = useState([]);
+  const [showPreview, setShowPreview] = useState(false);
   const [shiftReqs, setShiftReqs] = useState([]);
   const [skillsOptions, setSkillsOptions] = useState([]);
   const [shiftsOptions, setShiftsOptions] = useState([]);
+  const [staffData, setStaffData] = useState([]);
   const [confirmDialog, setConfirmDialog] = useState({
     open: false,
     title: '',
@@ -72,6 +76,40 @@ const Scheduler = () => {
   const [editReqOpen, setEditReqOpen] = useState(false);
   const [editingReqId, setEditingReqId] = useState(null);
   const [bulkImportOpen, setBulkImportOpen] = useState(false);
+
+  // Hook into the socket for staff_roster results
+  const { eventResults } = useEventResults(
+    import.meta.env.VITE_API_URL || 'http://localhost:3001',
+    'staff_roster'
+  );
+
+  // Listen for new results from the socket
+  useEffect(() => {
+    if (eventResults && eventResults.length > 0) {
+      // Get the latest result
+      const latest = eventResults[eventResults.length - 1];
+      
+      // Check if it has payload data
+      let payload = null;
+      try {
+        if (typeof latest.EventData === 'string') {
+          payload = JSON.parse(latest.EventData);
+        } else {
+          payload = latest.EventData;
+        }
+      } catch (e) {
+        console.error('Failed to parse socket event data', e);
+      }
+
+      if (payload && payload.assignments) {
+        console.log('Received assignments from socket:', payload.assignments);
+        setGeneratedAssignments(payload.assignments);
+        setLoading(false);
+        setSuccess('Schedule generated! Click "Preview Schedule" to review.');
+        // Don't show preview immediately, let user click the button as per UX
+      }
+    }
+  }, [eventResults]);
 
   useEffect(() => {
     calculateSchedulePeriod();
@@ -243,37 +281,47 @@ const Scheduler = () => {
   const handleSaveSchedule = async () => {
     if (!generatedAssignments || generatedAssignments.length === 0) return;
 
+    try {
+      const normalized = generatedAssignments.map(a => ({
+        date: a.date || a.Day || a.day || a.shift_date,
+        employee_id: Number(a.employee_id || a.EmployeeID || a.staffId),
+        shift: a.shift || a.Shift || a.shiftCode,
+        working: a.working !== undefined ? a.working : true
+      }));
+
+      // Filter out invalid entries (e.g. null shifts from solver)
+      const validAssignments = normalized.filter(a => a.date && a.shift);
+
+      await apiService.saveEmployeeSchedule(validAssignments);
+
+      setFeedback({
+        open: true,
+        title: 'Success',
+        message: 'Schedule saved successfully.'
+      });
+
+      setActiveSchedule({ id: 'current', status: 'active' });
+      setShowPreview(false);
+      setGeneratedAssignments([]);
+    } catch (e) {
+      setFeedback({
+        open: true,
+        title: 'Error',
+        message: 'Failed to save schedule.'
+      });
+    }
+  };
+
+  const handleDiscardSchedule = () => {
     setConfirmDialog({
       open: true,
-      title: 'Save Schedule',
-      message: 'Save generated schedule to the database?',
-      onConfirm: async () => {
-        try {
-          const normalized = generatedAssignments.map(a => ({
-            date: a.date || a.Day || a.day,
-            employee_id: Number(a.employee_id || a.EmployeeID || a.staffId),
-            shift: a.shift || a.Shift || a.shiftCode,
-            working: a.working !== undefined ? a.working : true
-          }));
-
-          await apiService.saveEmployeeSchedule(normalized);
-
-          setFeedback({
-            open: true,
-            title: 'Success',
-            message: 'Schedule saved successfully.'
-          });
-
-          setActiveSchedule({ id: 'current', status: 'active' });
-        } catch (e) {
-          setFeedback({
-            open: true,
-            title: 'Error',
-            message: 'Failed to save schedule.'
-          });
-        } finally {
-          setConfirmDialog(prev => ({ ...prev, open: false }));
-        }
+      title: 'Discard Schedule',
+      message: 'Are you sure you want to discard this generated schedule?',
+      onConfirm: () => {
+        setGeneratedAssignments([]);
+        setShowPreview(false);
+        setSuccess(null);
+        setConfirmDialog(prev => ({ ...prev, open: false }));
       }
     });
   };
@@ -385,15 +433,18 @@ const Scheduler = () => {
 
   const loadSupportData = async () => {
     try {
-      const [skills, shifts] = await Promise.all([
+      const [skills, shifts, staff] = await Promise.all([
         apiService.getTableData('Skills'),
-        apiService.getTableData('Shifts')
+        apiService.getTableData('Shifts'),
+        apiService.getTableData('Staff')
       ]);
       setSkillsOptions((skills || []).map(s => ({ value: s.SkillID, label: s.SkillName })));
       setShiftsOptions((shifts || []).map(s => ({ value: s.ShiftCode, label: `${s.ShiftName} (${s.ShiftCode})` })));
+      setStaffData(staff || []);
     } catch (e) {
       setSkillsOptions([]);
       setShiftsOptions([]);
+      setStaffData([]);
     }
   };
 
@@ -405,6 +456,17 @@ const Scheduler = () => {
       setShiftReqs([]);
     }
   };
+
+  if (showPreview) {
+    return (
+      <SchedulePreview 
+        assignments={generatedAssignments} 
+        staffData={staffData}
+        onAccept={handleSaveSchedule}
+        onDiscard={handleDiscardSchedule}
+      />
+    );
+  }
 
   return (
     <Box sx={{ p: 3, maxWidth: 1200, mx: 'auto' }}>
@@ -520,7 +582,7 @@ const Scheduler = () => {
               size="large"
               startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <ScheduleIcon />}
               onClick={handleRequestSchedule}
-              disabled={loading || !!activeSchedule || !readiness.ready}
+              disabled={loading || !!activeSchedule || !readiness.ready || generatedAssignments.length > 0}
               sx={{
                 minWidth: 240,
                 py: 2,
@@ -540,15 +602,16 @@ const Scheduler = () => {
                 }
               }}
             >
-              {loading ? 'Processing...' : activeSchedule ? 'Schedule Already Active' : readiness.ready ? 'Request Schedule' : 'Complete Setup First'}
+              {loading ? 'Processing...' : activeSchedule ? 'Schedule Already Active' : generatedAssignments.length > 0 ? 'Schedule Generated' : readiness.ready ? 'Request Schedule' : 'Complete Setup First'}
             </Button>
 
             {generatedAssignments.length > 0 && (
               <Button
                 variant="contained"
                 size="large"
-                color="success"
-                onClick={handleSaveSchedule}
+                color="primary"
+                startIcon={<CalendarIcon />}
+                onClick={() => setShowPreview(true)}
                 sx={{
                   minWidth: 240,
                   py: 2,
@@ -558,7 +621,7 @@ const Scheduler = () => {
                   borderRadius: 2,
                 }}
               >
-                Save Schedule
+                Preview Schedule
               </Button>
             )}
           </Box>
