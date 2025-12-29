@@ -255,8 +255,10 @@ const DataViewer = () => {
         <Tabs 
           value={currentTable} 
           onChange={handleTabChange} 
-          variant={isMobile ? "scrollable" : "standard"}
+          variant="scrollable"
           scrollButtons="auto"
+          allowScrollButtonsMobile
+          sx={{ overflowX: 'auto', width: '100%' }}
         >
           {tableNames.map((tableName) => (
             <Tab 
