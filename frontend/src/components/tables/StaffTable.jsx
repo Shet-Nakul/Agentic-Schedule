@@ -20,7 +20,42 @@ const StaffTable = ({ data, contractsData, skillsData, onRefresh }) => {
   
   const tableName = 'Staff';
   
-  const columns = data && data.length > 0 ? Object.keys(data[0]) : [];
+  const [displayRows, setDisplayRows] = useState([]);
+  
+  useEffect(() => {
+    let cancelled = false;
+    const buildDisplayRows = async () => {
+      const contractMap = new Map((contractsData || []).map(c => [c.ContractID, c.Description]));
+      const staffList = Array.isArray(data) ? data : [];
+      const promises = staffList.map(row => apiService.request(`/staff/${row.StaffID}`).catch(() => null));
+      const details = await Promise.all(promises);
+      const byId = {};
+      details.forEach(d => {
+        const s = d && d.payload && d.payload.staff ? d.payload.staff : null;
+        if (s && s.StaffID != null) byId[s.StaffID] = s;
+      });
+      const rows = staffList.map(row => {
+        const contractName = contractMap.get(row.ContractID) ?? row.ContractID ?? null;
+        const detailed = byId[row.StaffID];
+        const skillNames = Array.isArray(detailed?.skills)
+          ? detailed.skills.map(s => s.name ?? s.SkillName ?? '').filter(Boolean).join(', ')
+          : Array.isArray(row.skills)
+            ? row.skills.map(s => s.name ?? s.SkillName ?? '').filter(Boolean).join(', ')
+            : '';
+        return {
+          StaffID: row.StaffID,
+          Name: row.Name ?? '',
+          Contract: contractName ?? '',
+          Skills: skillNames
+        };
+      });
+      if (!cancelled) setDisplayRows(rows);
+    };
+    buildDisplayRows();
+    return () => { cancelled = true; };
+  }, [data, contractsData]);
+  
+  const columns = displayRows && displayRows.length > 0 ? Object.keys(displayRows[0]) : [];
   
 const formFields = [
     { name: 'name', type: 'text', label: 'Staff Name' },
@@ -276,7 +311,7 @@ const handleFormChange = (field, value) => {
       </Button>
       <BaseTable
         tableName={tableName}
-        data={data || []}
+        data={displayRows || []}
         columns={columns}
         onView={handleView}
         onEdit={handleEdit}
