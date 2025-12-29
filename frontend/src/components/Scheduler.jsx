@@ -53,6 +53,9 @@ const Scheduler = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [horizon, setHorizon] = useState(28);
+  const [selectionMode, setSelectionMode] = useState('month');
+  const [customStartDate, setCustomStartDate] = useState('');
+  const [customEndDate, setCustomEndDate] = useState('');
   const [generatedAssignments, setGeneratedAssignments] = useState([]);
   const [showPreview, setShowPreview] = useState(false);
   const [shiftReqs, setShiftReqs] = useState([]);
@@ -113,7 +116,7 @@ const Scheduler = () => {
 
   useEffect(() => {
     calculateSchedulePeriod();
-  }, []);
+  }, [selectionMode, customStartDate, customEndDate]);
 
   useEffect(() => {
     if (schedulePeriod) {
@@ -126,13 +129,20 @@ const Scheduler = () => {
 
   const calculateSchedulePeriod = () => {
     const today = new Date();
-    const startDate = new Date(today);
-    const endDate = new Date(today);
-    endDate.setDate(today.getDate() + 28);
-
+    let startDate = new Date(today);
+    let endDate = new Date(today);
+    if (selectionMode === 'custom' && customStartDate && customEndDate) {
+      startDate = new Date(customStartDate);
+      endDate = new Date(customEndDate);
+    } else {
+      endDate = new Date(today);
+      endDate.setMonth(today.getMonth() + 1);
+    }
+    const s = startDate.toISOString().split('T')[0];
+    const e = endDate.toISOString().split('T')[0];
     setSchedulePeriod({
-      startDate: startDate.toISOString().split('T')[0],
-      endDate: endDate.toISOString().split('T')[0],
+      startDate: s,
+      endDate: e,
       startDateFormatted: startDate.toLocaleDateString('en-US', {
         weekday: 'long',
         year: 'numeric',
@@ -146,6 +156,9 @@ const Scheduler = () => {
         day: 'numeric'
       })
     });
+    const diffMs = endDate.getTime() - startDate.getTime();
+    const days = Math.max(1, Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1);
+    setHorizon(days);
   };
 
   const checkActiveSchedule = async () => {
@@ -478,7 +491,7 @@ const Scheduler = () => {
             Schedule Manager
           </Typography>
           <Typography variant="body1" sx={{ color: '#6c757d' }}>
-            Request and manage 4-week staff schedules
+            Request and manage staff schedules
           </Typography>
         </Box>
         <Button
@@ -528,7 +541,7 @@ const Scheduler = () => {
                   Schedule Period
                 </Typography>
                 <Typography variant="body2" sx={{ color: '#6c757d' }}>
-                  {formatDateRange()} (4 weeks)
+                  {formatDateRange()}
                 </Typography>
               </Box>
             </Box>
@@ -541,6 +554,46 @@ const Scheduler = () => {
           </Box>
 
           <Divider sx={{ my: 3 }} />
+
+          <Grid container spacing={2} sx={{ mb: 2 }}>
+            <Grid item xs={12} md={4}>
+              <FormControl fullWidth size="small">
+                <InputLabel>Selection Mode</InputLabel>
+                <Select
+                  label="Selection Mode"
+                  value={selectionMode}
+                  onChange={(e) => setSelectionMode(e.target.value)}
+                >
+                  <MenuItem value="month">Month (from today + 1 month)</MenuItem>
+                  <MenuItem value="custom">Custom Range</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            {selectionMode === 'custom' && (
+              <>
+                <Grid item xs={12} md={4}>
+                  <TextField
+                    fullWidth
+                    size="small"
+                    type="date"
+                    label="Start Date"
+                    value={customStartDate}
+                    onChange={(e) => setCustomStartDate(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <TextField
+                    fullWidth
+                    size="small"
+                    type="date"
+                    label="End Date"
+                    value={customEndDate}
+                    onChange={(e) => setCustomEndDate(e.target.value)}
+                  />
+                </Grid>
+              </>
+            )}
+          </Grid>
 
           {/* Schedule Period Details */}
           <Grid container spacing={3} sx={{ mb: 3 }}>
@@ -887,13 +940,13 @@ const Scheduler = () => {
           </Typography>
           <Box component="ul" sx={{ pl: 2, m: 0 }}>
             <Typography component="li" variant="body2" sx={{ mb: 1 }}>
-              Click "Request Schedule" to generate a new 4-week schedule
+              Select a custom date range or default month, then click "Request Schedule"
             </Typography>
             <Typography component="li" variant="body2" sx={{ mb: 1 }}>
-              Only one active schedule is allowed per 4-week period
+              Only one active schedule is allowed per selected period
             </Typography>
             <Typography component="li" variant="body2" sx={{ mb: 1 }}>
-              The system will automatically calculate the next 4 weeks from today
+              Default period starts today and extends one month ahead
             </Typography>
             <Typography component="li" variant="body2">
               Once a schedule is active, you cannot request a new one until the period ends
